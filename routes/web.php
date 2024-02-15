@@ -342,6 +342,4 @@ Route::get('payment-fail', 'Customer\PaymentController@fail')->name('payment-fai
 Route::get('/test', function (){
     return view('welcome');
 });
-Route::get('/web', function (){
-    dd("dev");
-});
+

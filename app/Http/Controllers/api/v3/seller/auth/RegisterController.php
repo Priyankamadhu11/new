@@ -71,7 +71,6 @@ class RegisterController extends Controller
 
             $seller_id=$seller->id;
 
-            dd($seller_id);
             
             DB::commit();
 

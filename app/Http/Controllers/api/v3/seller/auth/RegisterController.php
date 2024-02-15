@@ -71,6 +71,8 @@ class RegisterController extends Controller
 
             $seller_id=$seller->id;
 
+            dd($seller_id);
+            
             DB::commit();
 
             if ($seller_id !== null) 
@@ -84,8 +86,8 @@ class RegisterController extends Controller
                 $primaryRecipient = $emailServices_smtp['email_id'];
                 Mail::to($primaryRecipient)->send($mailMessage);
 
+                return response()->json(['message' => translate('Shop apply successfully!')], 200);
             }
-            return response()->json(['message' => translate('Shop apply successfully!')], 200);
 
         } catch (\Exception $e) {
             DB::rollback();

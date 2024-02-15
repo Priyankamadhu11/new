@@ -12,7 +12,6 @@ use App\CPU\Helpers;
 use Illuminate\Support\Facades\Validator;
 use function App\CPU\translate;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\SellerRegister;
 
 class RegisterController extends Controller
 {

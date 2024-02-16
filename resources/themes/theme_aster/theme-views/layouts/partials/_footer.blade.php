@@ -147,6 +147,7 @@
                                 </ul>
                             </div>
                         </div>
+                        
                         <div class="col-sm-4 col-6">
                             <div class="widget widget--nav absolute-white">
                                 <h4 class="widget__title">{{translate('Quick_Links')}}</h4>
@@ -161,6 +162,7 @@
                                 </ul>
                             </div>
                         </div>
+
                         <div class="col-sm-4 col-6">
                             <div class="widget widget--nav absolute-white">
                                 <h4 class="widget__title">{{translate('Other')}}</h4>

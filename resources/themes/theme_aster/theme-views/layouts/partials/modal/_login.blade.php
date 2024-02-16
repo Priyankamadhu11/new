@@ -38,7 +38,9 @@
                             {{translate('Sign_Up')}}
                         </span>
                     </p>
+                    
                     <p>Seller Login? <a class="text-primary fw-bold" href="{{route('seller.auth.login')}}">Click here</a></p>
+
                     </div>
                 </div>
 

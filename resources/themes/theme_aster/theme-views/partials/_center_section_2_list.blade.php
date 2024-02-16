@@ -51,7 +51,6 @@
         </div>
     @endif -->
     
-
      
     @if(isset($banners[2]))
 
@@ -76,15 +75,26 @@
         <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
             <h2>{{$toyname->name}}</h2>
         </div>
-        <div class="toy_slider row g-2 g-sm-4 pb-5">
-            @foreach ($toys_list as $key => $toys)
-                <div class="slide col-2 d-none d-sm-block text-center">
-                    <a href="{{ route('products', ['id' => $toys['id'], 'data_from' => 'category', 'page' => 1]) }}" class="text-center">
-                        <img src="{{ asset('storage/app/public/category/' . $toys->icon) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit">
-                        <span class="text-center pt-2">{{ $toys->name }}</span>
-                    </a>
+
+            <div class="swiper-container pb-5">
+                    <!-- Swiper -->
+                <div class="position-relative">
+                    <div class="swiper" data-swiper-loop="true" data-swiper-margin="20"
+                             data-swiper-pagination-el="null" data-swiper-navigation-next=".top-stores-nav-next"
+                             data-swiper-navigation-prev=".top-stores-nav-prev"
+                             data-swiper-breakpoints='{"0": {"slidesPerView": "1"}, "768": {"slidesPerView": "2"}, "992": {"slidesPerView": "4"}}'>
+                    <div class="swiper-wrapper">            
+                        @foreach ($toys_list as $key => $toys)
+                            <div class="swiper-slide align-items-start bg-light rounded">
+                                <a href="{{ route('products', ['id' => $toys['id'], 'data_from' => 'category', 'page' => 1]) }}" class="text-center">
+                                    <img src="{{ asset('storage/app/public/category/' . $toys->icon) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit">
+                                    <span class="text-center pt-2">{{ $toys->name }}</span>
+                                </a>
+                            </div>
+                        @endforeach
+                    </div>
                 </div>
-            @endforeach
+            </div>
         </div>
     </div>
 
@@ -171,8 +181,8 @@
         $('.toy_slider').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            autoplay: true,
-            autoplaySpeed: 2000,
+            autoplay: true, // Set autoplay to true
+            autoplaySpeed: 2000, // Adjust autoplay speed as needed
             infinite: true, 
             responsive: [
                 {

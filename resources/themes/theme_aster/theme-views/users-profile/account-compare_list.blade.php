@@ -75,7 +75,7 @@
                                             @foreach ($compare_lists as $compare_list)
                                                 @php($category_id = $compare_list->product['category_id'])
                                                 <td>
-                                                    <a href="{{route('products',['id'=> $compare_list->product['category_id'],'data_from'=>'category','name'=>$category['name'],'page'=>1])}}">
+                                                    <a href="{{route('products',['id'=> $compare_list->product['category_id'],'data_from'=>'category','name'=>\App\CPU\CategoryManager::get_category_name($compare_list->product['category_id']),'page'=>1])}}">
                                                     {{ \App\CPU\CategoryManager::get_category_name($compare_list->product['category_id']) }}
                                                     </a>
                                                 </td>

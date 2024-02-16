@@ -463,4 +463,24 @@ class SellerController extends Controller
         // dd($sellers);
         return Excel::download(new SellerListExport($data),'Seller-list.xlsx');
     }
+
+
+    public function delete_seller($id)
+    {
+            $seller_id=$id;
+            if($seller_id)
+            {
+                Coupon::where(['coupon_bearer'=>'seller','seller_id'=>$seller->id])->delete();
+                ImageManager::delete('/seller/' . $seller['image']);
+                $seller->delete_status = 1;
+                $seller->delete();
+                Toastr::success(translate('Seller deleted successfully.'));
+                return back();    
+            }else{
+
+                Toastr::info(translate('Something went wrong!'));
+                return back(); 
+            }
+        
+    }
 }

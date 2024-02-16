@@ -137,7 +137,13 @@
                                                 href="{{route('admin.sellers.view',$seller->id)}}">
                                                 <i class="tio-invisible"></i>
                                             </a>
+                                            <a title="{{translate('Delete')}}"
+                                                class="btn btn-outline-info btn-sm square-btn"
+                                                href="{{route('admin.sellers.delete_seller',$seller->id)}}">
+                                                <i class="tio-delete"></i>
+                                            </a>
                                         </div>
+
                                     </td>
                                 </tr>
                             @endforeach

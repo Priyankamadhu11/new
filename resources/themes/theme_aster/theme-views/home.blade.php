@@ -14,7 +14,7 @@
 @endpush
 
 @section('content')
-    <main class="main-content d-flex flex-column gap-3 py-3">
+    <main class="main-content d-flex flex-column gap-3">
         <!-- Main Banner -->
         @include('theme-views.partials._main-banner')
 

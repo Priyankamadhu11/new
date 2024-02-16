@@ -55,11 +55,11 @@
             <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
                 <h2>{{$cat_name->name}}</h2>
             </div>
-            <div class="row g-2 g-sm-3 pb-5">
+            <div class="row g-2 g-sm-4 pb-5">
             
 
                 @foreach ($jaggery_list as $key => $image)
-                    <div class="col-2 d-none d-sm-block text-center">
+                    <div class="col-3 d-none d-sm-block text-center">
                         @if($image->used_or_new == 1)
                             <div id="refurbished">Refurbished Product</div>
                         @endif

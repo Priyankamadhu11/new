@@ -1,7 +1,7 @@
 <section class="banner">
-    <div class="container">
+    <div class="">
         <div class="card moble-border-0">
-            <div class="p-0 m-sm-1">
+            <div class="p-0 ">
                 <div class="row g-3">
                     <!-- <div class="col-xl-3 col-lg-4 d-none d-xl-block">
                         <div class="">
@@ -76,7 +76,7 @@
                                         <a href="{{ $banner['url'] }}" class="ad-hover h-100">
                                             <img src="{{asset('storage/app/public/banner')}}/{{$banner['photo']}}" loading="lazy" alt=""
                                                 onerror="this.src='{{theme_asset('assets/img/image-place-holder-2_1.png')}}'"
-                                                class="dark-support rounded w-100 img-fit">
+                                                class="dark-support rounded w-100">
                                         </a>
                                     </div>
                                 @endforeach

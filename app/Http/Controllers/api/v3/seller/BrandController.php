@@ -44,7 +44,7 @@ class BrandController extends Controller
                 $brand->status = 1;
                 $brand->seller_id = $sellerId;
                 $brand->save();
-                return response()->json($brand, 200);
+                return response()->json(['success' => 'Brand added successfully','Brand'=>$brand], 200);
             } 
             else 
             {

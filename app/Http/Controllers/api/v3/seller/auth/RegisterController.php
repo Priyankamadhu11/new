@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\DB;
 use App\CPU\Helpers;
 use Illuminate\Support\Facades\Validator;
 use function App\CPU\translate;
+use Illuminate\Support\Facades\Mail;
 
 class RegisterController extends Controller
 {
@@ -70,21 +71,20 @@ class RegisterController extends Controller
             ]);
 
             $seller_id=$seller->id;
-            
+
             DB::commit();
 
-            return response()->json(['message' => translate('Shop apply successfully!')], 200);
-
-            if ($seller_id !== null) 
-            {
-                $seller=Seller::where('id',$seller_id)->first();
+            if ($seller_id !== null) {
+                $seller = Seller::where('id', $seller_id)->first();
                 $emailServices_smtp = Helpers::get_business_settings('mail_config');
-                $mailMessage = new \App\Mail\SellerRegister($seller);
-
+                
+                $mailMessage = new SellerRegister($seller);
+            
                 $mailMessage->from($seller->email, $seller->f_name);
-
+            
                 $primaryRecipient = $emailServices_smtp['email_id'];
                 Mail::to($primaryRecipient)->send($mailMessage);  
+                return response()->json(['message' => translate('Shop apply successfully!')], 200);
             }
 
         } catch (\Exception $e) {

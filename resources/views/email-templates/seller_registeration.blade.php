@@ -119,7 +119,7 @@
     <ul>
         <li><strong>Name:</strong> {{ $seller->f_name }} {{ $seller->l_name }}</li>
         <li><strong>Email:</strong> {{ $seller->email }}</li>
-        <li><strong>Phone:</strong> {{ $shop->contact }}</li>
+        <li><strong>Phone:</strong> {{ $seller->phone }}</li>
         <li><strong>Shop Name:</strong> {{ $shop->name }}</li>
         <li><strong>Shop Address:</strong> {{ $shop->address }}</li>
     </ul>

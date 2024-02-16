@@ -352,7 +352,7 @@
                 </div>
                 <div class="text-center pt-5">
                     <h2>Kickstart your enterprise with Zigamart and <br> tap into a broad customer base <br> across India</h2>
-                    <button class="mt-3 m-auto btn btn-primary" id="scrollToSection">Start selling now</button>
+                    <button class="mt-3 m-auto btn btn-primary fs-5" id="scrollToSection"> Start selling now!</button>
                 </div>
             </div>
         </div>

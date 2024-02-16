@@ -27,8 +27,10 @@
                 </div>
                 <div class="mb-4">
                     <h2 class="mb-2">{{ translate('login') }}</h2>
+                    <div class="d-flex justify-content-between">
                     <p class="text-muted">
-                        {{ translate('login_to_your_account.') }} {{ translate('Don’t_have_account') }}?
+                        <!-- {{ translate('login_to_your_account.') }}  -->
+                        {{ translate('Don’t_have_account') }}?
                         <span
                             class="text-primary fw-bold"
                             data-bs-toggle="modal"
@@ -36,6 +38,8 @@
                             {{translate('Sign_Up')}}
                         </span>
                     </p>
+                    <p>Seller Login? <a class="text-primary fw-bold" href="{{route('seller.auth.login')}}">Click here</a></p>
+                    </div>
                 </div>
 
                 <form action="{{route('customer.auth.login')}}" method="post" id="customer_login_modal" autocomplete="off">

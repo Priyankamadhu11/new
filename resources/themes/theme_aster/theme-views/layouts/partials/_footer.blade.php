@@ -98,7 +98,12 @@
                             @php
                                 $address = \App\CPU\Helpers::get_business_settings('shop_address');
                                 $parts = explode(',', $address, 3);
-                                $formatted_address = $parts[0] . ', ' . $parts[1] . ",\n" . $parts[2];
+
+                                if (isset($parts[0]) && isset($parts[1]) && isset($parts[2])) {
+                                    $formatted_address = $parts[0] . ', ' . $parts[1] . ",\n" . $parts[2];
+                                } else {
+                                    $formatted_address = $address;
+                                }
                             @endphp
                             
                             {{ $formatted_address }}

@@ -20,7 +20,7 @@
         $cattname=\app\Model\Category::where('id',13)->first();
     @endphp
 
-    @if(isset($banners[1]))
+    <!-- @if(isset($banners[1]))
         <div class="container">
             <div class="py-3 rounded position-relative">
                 <a href="{{$banners[1]->url}}" target="_blank">
@@ -29,9 +29,9 @@
                         </a>
             </div>
         </div>
-    @endif
+    @endif -->
 
-    @if($subcat_list)
+    <!-- @if($subcat_list)
         <div class="container">
 
             <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
@@ -49,7 +49,7 @@
                 @endforeach
             </div>
         </div>
-    @endif
+    @endif -->
     
 
      
@@ -76,18 +76,18 @@
         <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
             <h2>{{$toyname->name}}</h2>
         </div>
-        <div class="row g-2 g-sm-3 pb-5">
-        
+        <div class="toy_slider row g-2 g-sm-4 pb-5">
             @foreach ($toys_list as $key => $toys)
-                <div class="col-2 d-none d-sm-block text-center">
-                    <a href="javascript:" onclick="location.href='{{route('products',['id'=> $toys['id'],'data_from'=>'category','page'=>1])}}'" class=" h-100 ">
-                        <img src="{{ asset('storage/app/public/category/' . $toys->icon) }}" loading="lazy" alt="" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
-                        <span class="text-center pt-2">{{$toys->name}}</span>
+                <div class="slide col-2 d-none d-sm-block text-center">
+                    <a href="{{ route('products', ['id' => $toys['id'], 'data_from' => 'category', 'page' => 1]) }}" class="text-center">
+                        <img src="{{ asset('storage/app/public/category/' . $toys->icon) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit">
+                        <span class="text-center pt-2">{{ $toys->name }}</span>
                     </a>
                 </div>
             @endforeach
         </div>
     </div>
+
     @endif
 
     @if(isset($banners[3]))
@@ -127,16 +127,16 @@
 
     @endif
 
-    @if(isset($banners[4]))
+    <!-- @if(isset($banners[4]))
         <div class="container">
             <div class="pb-5 rounded position-relative" target="_blank">
                 <img src="{{asset('storage/app/public/banner')}}/{{$banners[4]->photo}}" 
                     alt="" class="rounded dark-support img-fit start-0 top-0 index-n1 flipX-in-rtl h-auto">
             </div>
         </div>
-    @endif
+    @endif -->
 
-    @php
+    <!-- @php
         $appcatproducts=\app\Model\Category::where('parent_id',4)->get();
         $catname=\app\Model\Category::where('id',4)->first();
     @endphp
@@ -159,6 +159,35 @@
                 @endforeach
             </div>
         </div>
-    @endif
+    @endif -->
   
+    
 </section>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('.toy_slider').slick({
+            slidesToShow: 4,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 2000,
+            infinite: true, 
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 2
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 1
+                    }
+                }
+            ]
+        });
+    });
+</script>

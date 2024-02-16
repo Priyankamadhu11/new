@@ -39,6 +39,7 @@
         }
 
     </style>
+    
     <!-- <div class="footer-bg-img" data-bg-img="{{theme_asset('assets/img/background/footer-bg.png')}}">
 
     </div> -->

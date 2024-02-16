@@ -470,8 +470,8 @@ class SellerController extends Controller
             $seller_id=$id;
             if($seller_id)
             {
-                Coupon::where(['coupon_bearer'=>'seller','seller_id'=>$seller->id])->delete();
-                ImageManager::delete('/seller/' . $seller['image']);
+                // Coupon::where(['coupon_bearer'=>'seller','seller_id'=>$seller->id])->delete();
+                // ImageManager::delete('/seller/' . $seller['image']);
                 $seller->delete_status = 1;
                 $seller->delete();
                 Toastr::success(translate('Seller deleted successfully.'));

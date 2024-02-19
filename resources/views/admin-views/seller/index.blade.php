@@ -195,7 +195,7 @@
                         }
                     });
                     $.ajax({
-                        url: "{{ url('admin/sellers/delete/') }}" + id,
+                        url: "{{ url('admin/sellers/seller_delete') }}", 
                         method: 'GET',
                         data: {id: id},
                         success: function () {

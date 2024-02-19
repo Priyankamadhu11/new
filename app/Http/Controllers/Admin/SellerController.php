@@ -465,24 +465,20 @@ class SellerController extends Controller
     }
 
 
-    public function delete_seller($id)
+    public function delete_seller(Request $request)
     {
-            $seller_id=$id;
-            if($seller_id)
-            {
-                $seller=Seller::find($seller_id);
-                // Coupon::where(['coupon_bearer'=>'seller','seller_id'=>$seller->id])->delete();
-                // ImageManager::delete('/seller/' . $seller['image']);
+        $seller_id = $request->id;
+        if ($seller_id) {
+            $seller = Seller::find($seller_id);
+            if ($seller) {
                 $seller->delete_status = 1;
                 $seller->delete();
-                Toastr::success(translate('Seller deleted successfully.'));
-                return back();    
+                return response()->json(['success' => true, 'message' => translate('Seller deleted successfully.')]);
+            } else {
+                return response()->json(['success' => false, 'message' => translate('Seller not found.')], 404);
             }
-            else
-            {
-                Toastr::info(translate('Something went wrong!'));
-                return back(); 
-            }
-
+        } else {
+            return response()->json(['success' => false, 'message' => translate('Invalid request.')], 400);
+        }
     }
 }

@@ -178,7 +178,7 @@
             var id = $(this).attr("id");
             console.log("Seller ID:", id);
             Swal.fire({
-                title: "{{ translate('are_you_sure_to_delete_this_seller_permanently') }}?",
+                title: "{{ translate('Are you sure to delete this seller permanently') }}?",
                 text: "{{ translate('you_will_not_be_able_to_revert_this') }}!",
                 showCancelButton: true,
                 type: 'warning',
@@ -199,7 +199,7 @@
                         method: 'GET',
                         data: {id: id},
                         success: function () {
-                            toastr.success("{{ translate('this_seller_permanently_deleted_Successfully') }}");
+                            toastr.success("{{ translate('This seller permanently deleted Successfully') }}");
                             location.reload();
                         }
                     });

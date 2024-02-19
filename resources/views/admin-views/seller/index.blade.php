@@ -137,10 +137,11 @@
                                                 href="{{route('admin.sellers.view',$seller->id)}}">
                                                 <i class="tio-invisible"></i>
                                             </a>
-                                            <a title="{{translate('Delete')}}"
-                                                class="btn btn-outline-info btn-sm square-btn delete_seller">
+
+                                            <a title="{{translate('Delete')}}" class="btn btn-outline-info btn-sm square-btn delete_seller" id="{{ $seller->id }}">
                                                 <i class="tio-delete"></i>
                                             </a>
+
                                         </div>
 
                                     </td>
@@ -172,7 +173,8 @@
 @push('script')
 
 <script>
-        $(document).on('click', '.delete_seller', function () {
+    
+       $(document).on('click', '.delete_seller', function () {
             var id = $(this).attr("id");
             Swal.fire({
                 title: "{{translate('are_you_sure_to_delete_this_seller_permanently')}}?",
@@ -192,8 +194,8 @@
                         }
                     });
                     $.ajax({
-                        url: "{{route('admin.sellers.delete_seller')}}",
-                        method: 'POST',
+                        url: "{{ route('admin.sellers.delete_seller') }}/" + id, 
+                        method: 'GET',
                         data: {id: id},
                         success: function () {
                             toastr.success("{{translate('this_seller_permanently_deleted_Successfully.')}}");
@@ -203,6 +205,7 @@
                 }
             })
         });
+
     </script>
 
 @endpush

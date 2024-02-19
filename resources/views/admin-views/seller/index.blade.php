@@ -178,7 +178,7 @@
             var id = $(this).attr("id");
             console.log("Seller ID:", id);
             Swal.fire({
-                title: "{{ translate('Are you sure to delete this seller permanently') }}?",
+                title: "Are you sure to delete this seller permanently?",
                 text: "{{ translate('you_will_not_be_able_to_revert_this') }}!",
                 showCancelButton: true,
                 type: 'warning',

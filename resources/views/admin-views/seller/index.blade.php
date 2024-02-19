@@ -195,14 +195,15 @@
                         }
                     });
                     $.ajax({
-                        url: "{{ url('admin/sellers/delete/') }}" + id, 
+                        url: "{{ url('admin/sellers/delete/') }}" + id,
                         method: 'GET',
                         data: {id: id},
                         success: function () {
-                            toastr.success("{{ translate('This seller permanently deleted Successfully') }}");
+                            toastr.success("{{ translate('this_seller_permanently_deleted_Successfully') }}");
                             location.reload();
                         }
                     });
+
                 }
             });
         });

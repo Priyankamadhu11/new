@@ -336,7 +336,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
 
             Route::get('order-details/{order_id}/{seller_id}', 'SellerController@order_details')->name('order-details');
             Route::get('verification/{id}', 'SellerController@view')->name('verification');
-            Route::get('delete', 'SellerController@delete_seller')->name('delete_seller');
+            Route::get('delete/{id}', 'SellerController@delete_seller')->name('delete_seller');
             Route::get('view/{id}/{tab?}', 'SellerController@view')->name('view');
             Route::post('update-status', 'SellerController@updateStatus')->name('updateStatus');
             Route::post('withdraw-status/{id}', 'SellerController@withdrawStatus')->name('withdraw_status');

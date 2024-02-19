@@ -138,9 +138,10 @@
                                                 <i class="tio-invisible"></i>
                                             </a>
 
-                                            <a title="{{translate('Delete')}}" class="btn btn-outline-info btn-sm square-btn delete_seller" id="{{ $seller->id }}">
+                                            <a title="{{ translate('Delete') }}" class="btn btn-outline-info btn-sm square-btn delete_seller" id="{{ $seller->id }}">
                                                 <i class="tio-delete"></i>
                                             </a>
+
 
                                         </div>
 
@@ -173,9 +174,9 @@
 @push('script')
 
 <script>
-    
-       $(document).on('click', '.delete_seller', function () {
-            var id = $(this).attr("id");
+        $(document).on('click', '.delete_seller', function () {
+        var id = $(this).attr("id");
+        console.log("Seller ID:", id);
             Swal.fire({
                 title: "{{translate('are_you_sure_to_delete_this_seller_permanently')}}?",
                 text: "{{translate('you_will_not_be_able_to_revert_this')}}!",

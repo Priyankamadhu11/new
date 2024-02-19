@@ -26,21 +26,25 @@
                     />
                 </div>
                 <div class="mb-4">
-                    <h2 class="mb-2">{{ translate('login') }}</h2>
-                    <div class="d-flex justify-content-between">
-                    <p class="text-muted">
-                        <!-- {{ translate('login_to_your_account.') }}  -->
-                        {{ translate('Don’t_have_account') }}?
-                        <span
-                            class="text-primary fw-bold"
-                            data-bs-toggle="modal"
-                            data-bs-target="#registerModal">
-                            {{translate('Sign_Up')}}
-                        </span>
-                    </p>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <div class="col">
+                            <h2 class="mb-2">{{ translate('login') }}</h2>
+                            <p class="text-muted">
+                                <!-- {{ translate('login_to_your_account.') }}  -->
+                                {{ translate('Don’t_have_account') }}?
+                                <span
+                                    class="text-primary fw-bold"
+                                    data-bs-toggle="modal"
+                                    data-bs-target="#registerModal">
+                                    {{translate('Sign_Up')}}
+                                </span>
+                            </p>
+                        </div>
+                        <div class="col">
+                            <h2 class="mb-2">{{ translate('Seller Login') }}</h2>
+                            <p>Seller Login? <a class="text-primary fs-5 fw-bold" href="{{route('seller.auth.login')}}">Click here</a></p>
+                        </div>
                     
-                    <p>Seller Login? <a class="text-primary fw-bold" href="{{route('seller.auth.login')}}">Click here</a></p>
-
                     </div>
                 </div>
 

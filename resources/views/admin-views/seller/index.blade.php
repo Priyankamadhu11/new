@@ -138,8 +138,7 @@
                                                 <i class="tio-invisible"></i>
                                             </a>
                                             <a title="{{translate('Delete')}}"
-                                                class="btn btn-outline-info btn-sm square-btn"
-                                                href="{{route('admin.sellers.delete_seller',$seller->id)}}">
+                                                class="btn btn-outline-info btn-sm square-btn delete_seller">
                                                 <i class="tio-delete"></i>
                                             </a>
                                         </div>
@@ -171,5 +170,39 @@
 @endsection
 
 @push('script')
+
+<script>
+        $(document).on('click', '.delete_seller', function () {
+            var id = $(this).attr("id");
+            Swal.fire({
+                title: "{{translate('are_you_sure_to_delete_this_seller_permanently')}}?",
+                text: "{{translate('you_will_not_be_able_to_revert_this')}}!",
+                showCancelButton: true,
+                type: 'warning',
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: "{{translate('yes_delete_it')}}!",
+                cancelButtonText: '{{ translate("cancel") }}',
+                reverseButtons: true
+            }).then((result) => {
+                if (result.value) {
+                    $.ajaxSetup({
+                        headers: {
+                            'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                        }
+                    });
+                    $.ajax({
+                        url: "{{route('admin.sellers.delete_seller')}}",
+                        method: 'POST',
+                        data: {id: id},
+                        success: function () {
+                            toastr.success("{{translate('this_seller_permanently_deleted_Successfully.')}}");
+                            location.reload();
+                        }
+                    });
+                }
+            })
+        });
+    </script>
 
 @endpush

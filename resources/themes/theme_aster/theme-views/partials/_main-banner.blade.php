@@ -70,16 +70,18 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-10 d-flex m-auto">
-                                @foreach($footer_banner as $key=>$banner)
-                                    <div class="d-none d-sm-block p-2">
-                                        <a href="{{ $banner['url'] }}" class="ad-hover">
-                                            <img src="{{asset('storage/app/public/banner')}}/{{$banner['photo']}}" loading="lazy" alt=""
-                                                onerror="this.src='{{theme_asset('assets/img/image-place-holder-2_1.png')}}'"
-                                                class="dark-support rounded w-100">
-                                        </a>
-                                    </div>
-                                @endforeach
+                            <div class="col-10 m-auto">
+                                <div class="container d-flex">
+                                    @foreach($footer_banner as $key=>$banner)
+                                        <div class="d-none d-sm-block p-2">
+                                            <a href="{{ $banner['url'] }}" class="ad-hover">
+                                                <img src="{{asset('storage/app/public/banner')}}/{{$banner['photo']}}" loading="lazy" alt=""
+                                                    onerror="this.src='{{theme_asset('assets/img/image-place-holder-2_1.png')}}'"
+                                                    class="dark-support rounded w-100">
+                                            </a>
+                                        </div>
+                                    @endforeach
+                                </div>
                             </div>
                             <!-- @if(count($footer_banner)==0)
                                 <div class="col-3 d-none d-sm-block">

@@ -167,7 +167,7 @@
                                         <div class="d-flex justify-content-center gap-2">
                                             <a class="btn btn-outline-info btn-sm square-btn"
                                                 title="{{ translate('edit')}}"
-                                                href="{{route('admin.sub-sub-category.edit',[$category['id']])}}">
+                                                href="{{route('admin.category.edit',[$category['id']])}}">
                                                 <i class="tio-edit"></i>
                                             </a>
                                             <a class="btn btn-outline-danger btn-sm delete square-btn"

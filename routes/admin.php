@@ -110,8 +110,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
             Route::get('view', 'SubCategoryController@index')->name('view');
             Route::get('fetch', 'SubCategoryController@fetch')->name('fetch');
             Route::post('store', 'SubCategoryController@store')->name('store');
-            Route::get('edit/{id}', 'SubCategoryController@edit')->name('edit');
-            Route::post('update/{id}', 'SubCategoryController@update')->name('update');
+            Route::post('edit', 'SubCategoryController@edit')->name('edit');
+            Route::post('update', 'SubCategoryController@update')->name('update');
             Route::post('delete', 'SubCategoryController@delete')->name('delete');
         });
 
@@ -119,8 +119,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'as' => 'admin.'], fu
             Route::get('view', 'SubSubCategoryController@index')->name('view');
             Route::get('fetch', 'SubSubCategoryController@fetch')->name('fetch');
             Route::post('store', 'SubSubCategoryController@store')->name('store');
-            Route::get('edit/{id}', 'SubSubCategoryController@edit')->name('edit');
-            Route::post('update/{id}', 'SubSubCategoryController@update')->name('update');
+            Route::post('edit', 'SubSubCategoryController@edit')->name('edit');
+            Route::post('update', 'SubSubCategoryController@update')->name('update');
             Route::post('delete', 'SubSubCategoryController@delete')->name('delete');
             Route::post('get-sub-category', 'SubSubCategoryController@getSubCategory')->name('getSubCategory');
             Route::post('get-category-id', 'SubSubCategoryController@getCategoryId')->name('getCategoryId');

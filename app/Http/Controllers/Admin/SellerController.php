@@ -477,11 +477,12 @@ class SellerController extends Controller
                 $seller->delete();
                 Toastr::success(translate('Seller deleted successfully.'));
                 return back();    
-            }else{
-
+            }
+            else
+            {
                 Toastr::info(translate('Something went wrong!'));
                 return back(); 
             }
-        
+
     }
 }

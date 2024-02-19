@@ -6908,4 +6908,5 @@
   'Selling_price' => 'Selling price',
   'pay Nb2fq118VTZmiv' => 'Pay Nb2fq118VTZmiv',
   'pay NalXq5nbD67E0B' => 'Pay NalXq5nbD67E0B',
+  'Seller Login' => 'Seller Login',
 );

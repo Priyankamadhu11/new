@@ -170,7 +170,8 @@ class ProductController extends Controller
             }])
             ->where(['slug' => $slug])->first();
 
-        if (isset($product)) {
+        if (isset($product)) 
+        {
             $product = Helpers::product_data_formatting($product, false);
 
             if(isset($product->reviews) && !empty($product->reviews)){

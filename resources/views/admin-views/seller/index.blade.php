@@ -199,7 +199,7 @@
                         method: 'GET',
                         data: {id: id},
                         success: function () {
-                            toastr.success("{{ translate('this_seller_permanently_deleted_Successfully') }}");
+                            toastr.success("{{ translate('This seller permanently deleted Successfully') }}");
                             location.reload();
                         }
                     });

@@ -174,17 +174,17 @@
 @push('script')
 
 <script>
-        $(document).on('click', '.delete_seller', function () {
-        var id = $(this).attr("id");
-        console.log("Seller ID:", id);
+       $(document).on('click', '.delete_seller', function () {
+            var id = $(this).attr("id");
+            console.log("Seller ID:", id);
             Swal.fire({
-                title: "{{translate('are_you_sure_to_delete_this_seller_permanently')}}?",
-                text: "{{translate('you_will_not_be_able_to_revert_this')}}!",
+                title: "{{ translate('are_you_sure_to_delete_this_seller_permanently') }}?",
+                text: "{{ translate('you_will_not_be_able_to_revert_this') }}!",
                 showCancelButton: true,
                 type: 'warning',
                 confirmButtonColor: '#3085d6',
                 cancelButtonColor: '#d33',
-                confirmButtonText: "{{translate('yes_delete_it')}}!",
+                confirmButtonText: "{{ translate('yes_delete_it') }}!",
                 cancelButtonText: '{{ translate("cancel") }}',
                 reverseButtons: true
             }).then((result) => {
@@ -195,16 +195,16 @@
                         }
                     });
                     $.ajax({
-                        url: "{{ route('admin.sellers.delete_seller') }}/" + id, 
+                        url: "{{ url('admin/sellers/delete/') }}" + id, 
                         method: 'GET',
                         data: {id: id},
                         success: function () {
-                            toastr.success("{{translate('this_seller_permanently_deleted_Successfully.')}}");
+                            toastr.success("{{ translate('this_seller_permanently_deleted_Successfully') }}");
                             location.reload();
                         }
                     });
                 }
-            })
+            });
         });
 
     </script>

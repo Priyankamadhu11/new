@@ -70,6 +70,20 @@
                                     </div>
                                     @endforeach
 
+                                    @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))                                        <div class="form-group">
+                                            <label class="title-color"
+                                                for="exampleFormControlSelect1">{{translate('main_Category')}}
+                                                <span class="text-danger">*</span></label>
+                                            <select id="exampleFormControlSelect1" name="parent_id"
+                                                    class="form-control" required>
+                                                <option value="" selected disabled>{{translate('select_main_category')}}</option>
+                                                @foreach(\App\Model\Category::where(['position'=>0])->get() as $main_category)
+                                                    <option value="{{$main_category['id']}}">{{$main_category['defaultname']}}</option>
+                                                @endforeach
+                                            </select>
+                                        </div>
+                                    @endif
+
                                     <div class="form-group">
                                         <label class="title-color" for="priority">{{translate('priority')}}</label>
                                         <select class="form-control" name="priority" id="" required>

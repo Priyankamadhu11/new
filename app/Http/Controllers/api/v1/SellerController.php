@@ -74,7 +74,7 @@ class SellerController extends Controller
             ->withCount(['orders', 'product' => function ($query) {
                 $query->active();
             }])
-            ->select('id', 'f_name', 'l_name', 'phone', 'image', 'product_count', 'total_rating', 'rating_count', 'average_rating')
+            ->select('id', 'f_name', 'l_name', 'phone', 'image')            
             ->orderBy('orders_count', 'DESC')
             ->take(12)
             ->get();

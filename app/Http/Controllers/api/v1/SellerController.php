@@ -66,14 +66,19 @@ class SellerController extends Controller
 
     public function get_top_sellers()
     {
-        $top_sellers = $this->seller->approved()->with(['shop','orders','product.reviews'])
-            ->whereHas('orders',function($query){
-                $query->where('seller_is','seller');
+            $top_sellers = $this->seller->approved()
+            ->with(['shop','orders','product.reviews'])
+            ->whereHas('orders', function($query) {
+                $query->where('seller_is', 'seller');
             })
-            ->withCount(['orders','product' => function ($query) {
+            ->withCount(['orders', 'product' => function ($query) {
                 $query->active();
-            }])->orderBy('orders_count', 'DESC')->take(12)->get();
-
+            }])
+            ->select('id', 'f_name', 'l_name', 'phone', 'image', 'product_count', 'total_rating', 'rating_count', 'average_rating')
+            ->orderBy('orders_count', 'DESC')
+            ->take(12)
+            ->get();
+    
         $top_sellers?->map(function($seller){
             $seller->product?->map(function($product){
                 $product['rating'] = $product?->reviews->pluck('rating')->sum();

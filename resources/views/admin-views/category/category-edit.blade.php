@@ -28,6 +28,14 @@
                     </div> -->
                     <div class="card-body" style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
                         <form action="{{route('admin.category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
+                        @if($category['parent_id']==0 || ($category['position'] == 1 && theme_root_path() == 'theme_aster'))
+                        <form action="{{route('admin.sub-category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
+                        @endif
+
+                        @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))
+                            <form action="{{route('admin.sub-sub-category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
+                        @endif
+
                             @csrf
                             @php($language=\App\Model\BusinessSetting::where('type','pnc_language')->first())
                             @php($language = $language->value ?? null)

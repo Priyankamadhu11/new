@@ -153,15 +153,25 @@
                             <tr>
                                 <th>{{ translate('ID')}}</th>
                                 <th>{{ translate('sub_sub_category_name')}}</th>
+                                <th>{{ translate('sub_category_name')}}</th>
+                                <th>{{ translate('Category_name')}}</th>
                                 <th>{{ translate('priority')}}</th>
                                 <th class="text-center">{{ translate('action')}}</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $key=>$category)
+                                @foreach($categories as $key=>$category)
                                 <tr>
                                     <td>{{$category['id']}}</td>
                                     <td>{{$category['defaultName']}}</td>
+                                    <td>
+                                        <?php
+                                            $sub_cat = \App\Model\Category::where('id',$category->parent_id)->first();
+                                            $sub_cat_name=$sub_cat->name;
+                                        ?>
+                                        {{$sub_cat_name}}
+                                    </td>
+                                    <td>{{\App\Model\Category::where('id',$sub_cat->parent_id)->first()->name}}</td>
                                     <td>{{$category['priority']}}</td>
                                     <td class="text-center">
                                         <div class="d-flex justify-content-center gap-2">

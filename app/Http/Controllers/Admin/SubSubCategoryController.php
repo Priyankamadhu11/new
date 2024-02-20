@@ -62,7 +62,7 @@ class SubSubCategoryController extends Controller
                 );
             }
         }
-        Toastr::success(translate('Sub_Sub_Category_updated_successfully'));
+        Toastr::success(translate('Sub_Sub_Category_added_successfully'));
         return back();
     }
 
@@ -82,14 +82,31 @@ class SubSubCategoryController extends Controller
         ]);
 
         $category = Category::find($request->id);
-        $category->name = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->name = $request->name[array_search('en', $request->lang)];
+        $category->slug = Str::slug($request->name[array_search('en', $request->lang)]);
         $category->parent_id = $request->parent_id;
         $category->position = 2;
         $category->priority = $request->priority;
         $category->save();
-        return response()->json();
+        
+        foreach($request->lang as $index=>$key)
+        {
+            if($request->name[$index] && $key != 'en')
+            {
+                Translation::updateOrInsert(
+                    ['translationable_type'  => 'App\Model\Category',
+                        'translationable_id'    => $category->id,
+                        'locale'                => $key,
+                        'key'                   => 'name'],
+                    ['value'                 => $request->name[$index]]
+                );
+            }
+        }
+
+        Toastr::success(translate('Sub_Sub_Category_updated_successfully'));
+        return back();
     }
+
     public function delete(Request $request)
     {
         $translation = Translation::where('translationable_type','App\Model\Category')

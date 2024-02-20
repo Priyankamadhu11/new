@@ -27,12 +27,11 @@
                         {{ translate('category_form')}}
                     </div> -->
                     <div class="card-body" style="text-align: {{Session::get('direction') === "rtl" ? 'right' : 'left'}};">
+                        @if($category['position'] == 0 && theme_root_path() == 'theme_aster')
                         <form action="{{route('admin.category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
-                        @if($category['parent_id']==0 || ($category['position'] == 1 && theme_root_path() == 'theme_aster'))
+                        @elseif($category['position'] == 1 && theme_root_path() == 'theme_aster')
                         <form action="{{route('admin.sub-category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
-                        @endif
-
-                        @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))
+                        @elseif($category['position'] == 2 && theme_root_path() == 'theme_aster')
                             <form action="{{route('admin.sub-sub-category.update',[$category['id']])}}" method="POST" enctype="multipart/form-data">
                         @endif
 
@@ -97,24 +96,36 @@
                                             <option value="{{$main_category['id']}}" @if($main_category['id'] == $category['parent_id']) selected @endif>
                                                 {{$main_category['defaultname']}}
                                             </option>
-
                                             @endforeach
                                         </select>
                                     </div>
 
                                     @endif
 
-                                    @if($category['position'] == 2 && theme_root_path() != 'theme_aster'))
+                                    @if($category['position'] == 2 && theme_root_path() == 'theme_aster')
 
-                                    <div class="col-md-4">
                                         <div class="form-group">
-                                            <label class="title-color text-capitalize"
-                                                for="name">{{translate('sub_category_Name')}}<span class="text-danger">*</span></label>
-                                            <select name="parent_id" id="parent_id" class="form-control">
+                                            <label
+                                                class="title-color">{{translate('main_Category')}}
+                                                <span class="text-danger">*</span></label>
+                                                <select class="form-control" id="main_cat_id" required>
+                                                    <option value="" disabled selected>{{translate('select_main_category')}}</option>
+                                                    @foreach(\App\Model\Category::where(['position'=>0])->get() as $mainn_category)
 
+                                                        <?php
+                                                            $maincat = \App\Model\Category::where('id', $category['parent_id'])->first();
+                                                        ?>
+                                                        <option value="{{$mainn_category['id']}}" @if($mainn_category['id'] == $maincat->parent_id) selected @endif>{{$mainn_category['defaultName']}}</option>
+                                                    @endforeach
+                                                </select>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label class="title-color text-capitalize" for="name">{{translate('sub_category_Name')}}<span class="text-danger">*</span></label>
+                                            <select name="parent_id" id="sub_parent_id" class="form-control">
+                                                <option value="{{$maincat->id}}" selected>{{$maincat->name}}</option>
                                             </select>
                                         </div>
-                                    </div>
 
                                     @endif
 
@@ -127,8 +138,9 @@
                                             @endfor
                                         </select>
                                     </div>
+
                                 <!--image upload only for main category-->
-                                @if($category['parent_id']==0 || ($category['position'] == 1 && theme_root_path() == 'theme_aster'))
+                                @if($category['position'] == 0 || $category['position'] == 1 && theme_root_path() == 'theme_aster')
                                     <div class="from_part_2">
                                         <label class="title-color">{{translate('category_Logo')}}</label>
                                         <span class="text-info">({{translate('ratio')}} 1:1)</span>
@@ -152,7 +164,10 @@
                                         </center>
                                     </div>
                                 </div>
+                                @else
+
                                 @endif
+
                                 @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))
                                         <div class="d-flex justify-content-end gap-3">
                                             <button type="reset" id="reset" class="btn btn-secondary px-4">{{ translate('reset')}}</button>
@@ -174,6 +189,9 @@
             </div>
         </div>
     </div>
+    <?php
+     $main_cat_id=$maincat->id;
+    ?>
 @endsection
 
 @push('script')
@@ -216,6 +234,54 @@
 
         $("#customFileEg1").change(function () {
             readURL(this);
+        });
+    </script>
+    <script>
+        $( document ).ready(function() {
+
+            var main_cat_id={{$main_cat_id}}
+            $("#sub_parent_id").value(main_cat_id);
+            var id = $("#main_cat_id").val();
+            if (id) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '{{route('admin.sub-sub-category.getSubCategory')}}',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        $("#sub_parent_id").html(result);
+                    }
+                });
+            }
+        });
+    </script>
+    <script>
+        $('#main_cat_id').on('change', function () {
+            var id = $(this).val();
+            console.log(id);
+            if (id) {
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: 'POST',
+                    url: '{{route('admin.sub-sub-category.getSubCategory')}}',
+                    data: {
+                        id: id
+                    },
+                    success: function (result) {
+                        $("#sub_parent_id").html(result);
+                    }
+                });
+            }
         });
     </script>
 @endpush

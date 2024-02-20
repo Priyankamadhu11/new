@@ -68,7 +68,7 @@ class SubCategoryController extends Controller
                 );
             }
         }
-        Toastr::success(translate('category_updated_successfully'));
+        Toastr::success(translate('category_added_successfully'));
         return back();
     }
 
@@ -82,8 +82,8 @@ class SubCategoryController extends Controller
     public function update(Request $request)
     {
         $category = Category::find($request->id);
-        $category->name = $request->name;
-        $category->slug = Str::slug($request->name);
+        $category->name = $request->name[array_search('en', $request->lang)];
+        $category->slug = Str::slug($request->name[array_search('en', $request->lang)]);
         if ($request->image) {
             $category->icon = ImageManager::update('category/', $category->icon, 'webp', $request->file('image'));
         }
@@ -91,7 +91,21 @@ class SubCategoryController extends Controller
         $category->position = 1;
         $category->priority = $request->priority;
         $category->save();
-        return response()->json();
+        foreach($request->lang as $index=>$key)
+        {
+            if($request->name[$index] && $key != 'en')
+            {
+                Translation::updateOrInsert(
+                    ['translationable_type'  => 'App\Model\Category',
+                        'translationable_id'    => $category->id,
+                        'locale'                => $key,
+                        'key'                   => 'name'],
+                    ['value'                 => $request->name[$index]]
+                );
+            }
+        }
+        Toastr::success(translate('category_updated_successfully'));
+        return back();
     }
 
     public function delete(Request $request)

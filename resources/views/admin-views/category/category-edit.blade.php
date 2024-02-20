@@ -190,7 +190,7 @@
         </div>
     </div>
     <?php
-     if($maincat){
+     if(isset($maincat)){
         $main_cat_id=$maincat->id;
      }
      else{

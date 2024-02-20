@@ -190,7 +190,13 @@
         </div>
     </div>
     <?php
-     $main_cat_id=$maincat->id;
+     if($maincat){
+        $main_cat_id=$maincat->id;
+     }
+     else{
+        $main_cat_id=0;
+     }
+
     ?>
 @endsection
 

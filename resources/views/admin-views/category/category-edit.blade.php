@@ -94,9 +94,10 @@
                                         <select id="exampleFormControlSelect1" name="parent_id" class="form-control" required>
                                             <option value="" selected disabled>{{translate('select_main_category')}}</option>
                                             @foreach(\App\Model\Category::where(['position'=>0])->get() as $main_category)
-                                                <option value="{{$main_category['id']}} @if($category['parent_id']!=0) $category['parent_id'] selected @endif">
-                                                    {{$main_category['defaultname']}}
-                                                </option>
+                                            <option value="{{$main_category['id']}}" @if($main_category['id'] == $category['parent_id']) selected @endif>
+                                                {{$main_category['defaultname']}}
+                                            </option>
+
                                             @endforeach
                                         </select>
                                     </div>

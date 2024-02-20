@@ -111,7 +111,7 @@
                                                 <select class="form-control" id="main_cat_id" required>
                                                     <option value="" disabled selected>{{translate('select_main_category')}}</option>
                                                     @foreach(\App\Model\Category::where(['position'=>0])->get() as $mainn_category)
-                                                    
+
                                                         <?php
                                                             $maincat = \App\Model\Category::where('id', $category['parent_id'])->first();
                                                         ?>
@@ -189,6 +189,9 @@
             </div>
         </div>
     </div>
+    <?php
+     $main_cat_id=$maincat->id;
+    ?>
 @endsection
 
 @push('script')
@@ -236,6 +239,8 @@
     <script>
         $( document ).ready(function() {
 
+            var main_cat_id={{$main_cat_id}}
+            $("#sub_parent_id").value(main_cat_id);
             var id = $("#main_cat_id").val();
             if (id) {
                 $.ajaxSetup({

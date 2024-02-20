@@ -108,23 +108,22 @@
                                             <label
                                                 class="title-color">{{translate('main_Category')}}
                                                 <span class="text-danger">*</span></label>
-                                            <select class="form-control" id="main_cat_id" required>
-                                                <option value="" disabled selected>{{translate('select_main_category')}}</option>
-                                                @foreach(\App\Model\Category::where(['position'=>0])->get() as $mainn_category)
-                                                    <?php
-                                                        $maincat=\App\Model\Category::where('id',$category['parent_id'])->first();
-                                                    ?>
-                                                    <option value="{{$mainn_category['id']}}" @if($mainn_category['id'] == $maincat->parent_id) selected @endif>{{$mainn_category['defaultName']}}</option>
-
-                                                @endforeach
-                                            </select>
+                                                <select class="form-control" id="main_cat_id" required>
+                                                    <option value="" disabled selected>{{translate('select_main_category')}}</option>
+                                                    @foreach(\App\Model\Category::where(['position'=>0])->get() as $mainn_category)
+                                                    
+                                                        <?php
+                                                            $maincat = \App\Model\Category::where('id', $category['parent_id'])->first();
+                                                        ?>
+                                                        <option value="{{$mainn_category['id']}}" @if($mainn_category['id'] == $maincat->parent_id) selected @endif>{{$mainn_category['defaultName']}}</option>
+                                                    @endforeach
+                                                </select>
                                         </div>
 
                                         <div class="form-group">
-                                            <label class="title-color text-capitalize"
-                                                for="name">{{translate('sub_category_Name')}}<span class="text-danger">*</span></label>
-                                               
+                                            <label class="title-color text-capitalize" for="name">{{translate('sub_category_Name')}}<span class="text-danger">*</span></label>
                                             <select name="parent_id" id="sub_parent_id" class="form-control">
+                                                <option value="{{$maincat->id}}" selected>{{$maincat->name}}</option>
                                             </select>
                                         </div>
 

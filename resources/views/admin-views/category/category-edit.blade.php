@@ -59,7 +59,14 @@
                                         ?>
                                         <div class="form-group {{$lang != $default_lang ? 'd-none':''}} lang_form"
                                             id="{{$lang}}-form">
-                                            <label class="title-color">{{translate('category_Name')}}
+                                            <label class="title-color">
+                                            @if($category['position'] == 1)
+                                                {{translate('sub_category_Name')}}
+                                            @elseif($category['position'] == 2)
+                                                {{translate('sub_sub_category_Name')}}
+                                            @else
+                                                {{translate('category_Name')}}
+                                            @endif
                                                 ({{strtoupper($lang)}})</label>
                                             <input type="text" name="name[]"
                                                 value="{{$lang==$default_lang?$category['name']:($translate[$lang]['name']??'')}}"

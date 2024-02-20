@@ -85,7 +85,7 @@
                                     </div>
                                     @endforeach
 
-                                    @if($category['parent_id']==0 || ($category['position'] == 1 || $category['position'] == 2 && theme_root_path() == 'theme_aster'))                                       
+                                    @if($category['position'] == 1 && theme_root_path() == 'theme_aster')                                       
                                     <div class="form-group">
                                             <label class="title-color"
                                                 for="exampleFormControlSelect1">{{translate('main_Category')}}
@@ -100,7 +100,7 @@
                                         </div>
                                     @endif
 
-                                    @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))
+                                    @if($category['position'] == 2 && theme_root_path() != 'theme_aster'))
 
                                     <div class="col-md-4">
                                         <div class="form-group">

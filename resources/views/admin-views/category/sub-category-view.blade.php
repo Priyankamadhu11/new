@@ -177,7 +177,7 @@
                                         </td>
                                     @endif
                                     <td>{{($category['defaultname'])}}</td>
-                                    <td>{{($category['parent_id'])}}</td>
+                                    <td>{{\App\Model\Category::where('id',$category['parent_id'])->first()->name}}</td>
                                     <td>{{$category['priority']}}</td>
                                     <td>
                                         <div class="d-flex justify-content-center gap-2">

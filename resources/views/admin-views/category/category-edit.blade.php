@@ -70,7 +70,8 @@
                                     </div>
                                     @endforeach
 
-                                    @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))                                        <div class="form-group">
+                                    @if($category['parent_id']==0 || ($category['position'] == 1 || $category['position'] == 2 && theme_root_path() == 'theme_aster'))                                       
+                                    <div class="form-group">
                                             <label class="title-color"
                                                 for="exampleFormControlSelect1">{{translate('main_Category')}}
                                                 <span class="text-danger">*</span></label>
@@ -82,6 +83,20 @@
                                                 @endforeach
                                             </select>
                                         </div>
+                                    @endif
+
+                                    @if($category['position'] == 2 || ($category['position'] == 1 && theme_root_path() != 'theme_aster'))
+
+                                    <div class="col-md-4">
+                                        <div class="form-group">
+                                            <label class="title-color text-capitalize"
+                                                for="name">{{translate('sub_category_Name')}}<span class="text-danger">*</span></label>
+                                            <select name="parent_id" id="parent_id" class="form-control">
+
+                                            </select>
+                                        </div>
+                                    </div>
+
                                     @endif
 
                                     <div class="form-group">

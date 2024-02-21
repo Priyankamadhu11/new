@@ -123,7 +123,7 @@
             </div>
             <div class="row g-2 g-sm-3 pb-5">
                 @foreach ($topcat_list as $key => $topcat)
-                    <div class="col-2 d-none d-sm-block text-center">
+                    <div class="col-2 d-sm-block text-center">
                         <a href="javascript:0" onclick="location.href='{{route('products',['id'=> $topcat['id'],'data_from'=>'category','page'=>1])}}'" class="ad-hover h-100 d-flex flex-column align-items-center">
                             <div class="rounded-circle overflow-hidden border border-2" style="width:175px;height: 175px;border:1px dashed purple !important">
                                 <img src="{{ asset('storage/app/public/category/' . $topcat->icon) }}" loading="lazy" alt="" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
@@ -181,8 +181,8 @@
         $('.toy_slider').slick({
             slidesToShow: 4,
             slidesToScroll: 1,
-            autoplay: true, // Set autoplay to true
-            autoplaySpeed: 2000, // Adjust autoplay speed as needed
+            autoplay: true, 
+            autoplaySpeed: 2000, 
             infinite: true, 
             responsive: [
                 {

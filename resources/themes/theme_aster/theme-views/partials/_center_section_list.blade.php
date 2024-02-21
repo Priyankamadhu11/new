@@ -59,7 +59,7 @@
             
 
                 @foreach ($jaggery_list as $key => $image)
-                    <div class="col-3 d-none d-sm-block text-center">
+                    <div class="col-3 d-sm-block text-center">
                         @if($image->used_or_new == 1)
                             <div id="refurbished">Refurbished Product</div>
                         @endif
@@ -77,6 +77,5 @@
         </div>
     @endif
 
-   
 
 </section>

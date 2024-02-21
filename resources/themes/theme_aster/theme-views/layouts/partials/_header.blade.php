@@ -416,7 +416,7 @@
                     <!-- Header Category Dropdown -->
                     <div class="dropdown d-none d-xl-block">
                         <button
-                            class="btn btn-primary rounded-0 text-uppercase fw-bold fs-14 dropdown-toggle  bg-transparent text-light"
+                            class="btn btn-primary rounded-0 text-uppercase fw-bold fs-14 dropdown-toggle  bg-transparent border border-0 text-light"
                             type="button"
                             data-bs-toggle="dropdown"
                             aria-expanded="false">

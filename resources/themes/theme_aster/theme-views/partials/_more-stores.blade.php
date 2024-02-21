@@ -54,7 +54,7 @@
                 </div>
             </div>
         @else
-            <div class="d-sm-none mb-4">
+            <!-- <div class="d-sm-none mb-4">
                 @if($sidebar_banner)
                     <a href="{{ $sidebar_banner['url'] }}">
                         <img src="{{asset('storage/app/public/banner')}}/{{$sidebar_banner ? $sidebar_banner['photo'] : ''}}"
@@ -63,7 +63,7 @@
                 @else
                     <img src="{{ theme_asset('assets/img/top-side-banner-placeholder.png') }}" class="dark-support rounded w-100">
                 @endif
-            </div>
+            </div> -->
         @endif
         <!-- for mobile end -->
 

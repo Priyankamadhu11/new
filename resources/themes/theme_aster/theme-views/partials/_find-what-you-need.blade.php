@@ -68,7 +68,7 @@
                     </div>
                 </div>
             @else
-                <div class="d-none d-sm-block">
+                <!-- <div class="d-none d-sm-block">
                     @if($sidebar_banner)
                         <a href="{{ $sidebar_banner['url'] }}">
                             <img src="{{asset('storage/app/public/banner')}}/{{$sidebar_banner ? $sidebar_banner['photo'] : ''}}"
@@ -77,7 +77,7 @@
                     @else
                         <img src="{{ theme_asset('assets/img/top-side-banner-placeholder.png') }}" class="dark-support rounded w-100">
                     @endif
-                </div>
+                </div> -->
             @endif
 
             <div class="card">
@@ -247,7 +247,7 @@
                     </div>
                 </div>
             @else
-                <div class="col-12 d-sm-none">
+                <!-- <div class="col-12 d-sm-none">
                     @if($top_side_banner)
                         <a href="{{ $top_side_banner['url'] }}">
                             <img src="{{asset('storage/app/public/banner')}}/{{$top_side_banner ? $top_side_banner['photo'] : ''}}"
@@ -257,7 +257,7 @@
                     @else
                         <img src="{{ theme_asset('assets/img/top-side-banner-placeholder.png') }}" class="dark-support rounded w-100">
                     @endif
-                </div>
+                </div> -->
             @endif
             <!-- for mobile end -->
         </div>

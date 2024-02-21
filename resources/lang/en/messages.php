@@ -6912,4 +6912,5 @@
   'sub_sub_category_Name' => 'Sub sub category Name',
   'Category_name' => 'Category name',
   'COMING SOON!' => 'COMING SOON!',
+  'address_updated_successfully!' => 'Address updated successfully!',
 );

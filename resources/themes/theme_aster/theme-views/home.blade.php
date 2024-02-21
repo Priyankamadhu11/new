@@ -72,8 +72,6 @@
 
         <!-- Home Categories -->
 
-       
-
         <style>
             #mobile_app_section 
             {
@@ -94,10 +92,11 @@
                             Unlock the app's magic in just 30 seconds!</span>
                             <br><br>
                             @if($web_config['android']['status'])
-                                <a href="{{ $web_config['android']['link'] }}"><img src="{{ theme_asset('assets/img/media/google-play.png') }}" loading="lazy" alt=""></a>
+                                <a href="{{route('coming_soon')}}"><img src="{{ theme_asset('assets/img/media/google-play.png') }}" loading="lazy" alt=""></a>
+                                
                             @endif
                             @if($web_config['ios']['status'])
-                                <a href="{{ $web_config['ios']['link'] }}"><img src="{{ theme_asset('assets/img/media/app-store.png') }}" loading="lazy" alt=""></a>
+                                <a href="{{route('coming_soon')}}"><img src="{{ theme_asset('assets/img/media/app-store.png') }}" loading="lazy" alt=""></a>
                             @endif
                         </div>
                     </div>

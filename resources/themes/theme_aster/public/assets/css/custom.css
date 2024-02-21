@@ -779,7 +779,9 @@
     font-weight: 700;
     border: 1px dashed yellow;
 }
-
-img.dark-support.img-fit.rounded-circle.img-w-h-100 {
-    height: 5.25rem;
+@media (max-width: 768px) {
+    .img-w-h-100 
+    {
+        height: 5.25rem !important;
+    }
 }

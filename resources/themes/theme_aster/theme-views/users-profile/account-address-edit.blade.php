@@ -129,7 +129,6 @@
                                                 <input id="pac-input" class="controls rounded __inline-46" title="{{translate('search_your_location_here')}}" type="text" placeholder="{{translate('search_here')}}"/>
                                                 <div class="dark-support rounded w-100 __h-14rem" id="location_map_canvas"></div>
                                             </div> -->
-
                                             <div class="form-group">
                                                 <label for="address">{{translate('Address')}}</label>
                                                 <textarea name="address" id="address" rows="5" class="form-control" placeholder="{{translate('Ex:_1216_Dhaka')}}">{{$shippingAddress->address}}</textarea>

@@ -74,7 +74,7 @@
                                                     <a onclick="addCompareList('{{$product['id']}}','{{route('store-compare-list')}}')"
                                                     id="compare_list-{{$product['id']}}"
                                                        class="btn-compare stopPropagation add_to_compare compare_list-{{$product['id']}} {{($compare_list == 1?'compare_list_icon_active':'')}}"
-                                                       title="{{translate('add_to_wishlist')}}">
+                                                       title="Add to Comparelist">
                                                         <i class="bi bi-repeat"></i>
                                                     </a>
                                                     <div class="product-share-icons">

@@ -41,7 +41,7 @@ class CompareController extends Controller
                     session()->put('compare_list', $this->product_compare->where('user_id', auth('customer')->id())->pluck('product_id')->toArray());
 
                     return response()->json([
-                        'error' => translate("compare_list_Removed"),
+                        'error' => "Compare list removed",
                         'value' => 2,
                         'count' => $count_compare_list,
                         'product_count' => $product_count,
@@ -70,7 +70,7 @@ class CompareController extends Controller
                     session()->put('compare_list', $this->product_compare->where('user_id', auth('customer')->id())->pluck('product_id')->toArray());
 
                     return response()->json([
-                        'success' => translate("Product_has_been_added_to_Compare_list"),
+                        'success' => "Product has been added to Compare list",
                         'value' => 1,
                         'count' => $count_compare_list,
                         'id' => $request->product_id,

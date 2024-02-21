@@ -31,6 +31,9 @@
     .header_link:hover {
         color: white; 
     }
+    .header_link{
+        color: white;
+    }
 </style>
 <header class="header">
     <div class="header-top py-2">

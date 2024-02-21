@@ -452,10 +452,10 @@ label {
    ********************* */
 .bg-primary-light,
 .header-top {
-    background-color: #0bc1b89e;
+    background-color: #510183;
 }
 .header-middle.py-2.d-none.d-xl-block{
-    background-color:#510183 !important;
+    background-color:#14127c !important;
 }
 .absolute-white {
     --opacity: 1;
@@ -464,7 +464,7 @@ label {
 
 .header-main.love-sticky.py-2.py-lg-3.py-xl-0.shadow-sm 
 {
-    background-color:#510183 !important;
+    background-color:#14127c !important;
 }
 
 .absolute-dark {

@@ -339,6 +339,9 @@ Route::get('web-payment', 'Customer\PaymentController@web_payment_success')->nam
 Route::get('payment-success', 'Customer\PaymentController@success')->name('payment-success');
 Route::get('payment-fail', 'Customer\PaymentController@fail')->name('payment-fail');
 
+Route::get('coming-soon', 'Web\WebController@coming_soon')->name('coming_soon');
+
+
 Route::get('/test', function (){
     return view('welcome');
 });

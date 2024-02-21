@@ -6911,4 +6911,5 @@
   'Seller Login' => 'Seller Login',
   'sub_sub_category_Name' => 'Sub sub category Name',
   'Category_name' => 'Category name',
+  'COMING SOON!' => 'COMING SOON!',
 );

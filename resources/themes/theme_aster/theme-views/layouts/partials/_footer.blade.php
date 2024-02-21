@@ -90,6 +90,7 @@
             </div>
         </div>
     </div>
+
     <div class="footer-main px-2  px-lg-0">
         <div class="container">
             <div class="row gy-5">
@@ -122,6 +123,7 @@
                        
                     </div>
                 </div>
+
                 <div class="col-lg-8">
                     <div class="row gy-5">
                         <div class="col-sm-4 col-6">
@@ -206,6 +208,7 @@
             </div>
         </div>
     </div>
+    
     <div class="footer-bottom ocean">
         <div class="container">
             <div class="text-center copyright-text" style="color:wheat;">
@@ -217,6 +220,4 @@
         
     </div>
 
-  
-    
 </footer>

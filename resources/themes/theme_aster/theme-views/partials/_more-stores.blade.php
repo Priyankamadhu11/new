@@ -65,6 +65,7 @@
                 @endif
             </div>
         @endif
+        
         <!-- for mobile end -->
 
         <div class="pb-3">

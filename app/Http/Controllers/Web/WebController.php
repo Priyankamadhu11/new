@@ -1459,4 +1459,11 @@ class WebController extends Controller
         ]);
     }
 
+    public function coming_soon(Request $request)
+    {
+        Toastr::success(translate('COMING SOON!'));
+        return back();
+
+    }
+
 }

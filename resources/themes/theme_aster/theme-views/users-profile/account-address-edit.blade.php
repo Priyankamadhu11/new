@@ -70,7 +70,7 @@
                                             </div>
                                             <div class="form-group mb-3">
                                                 <label for="country">{{translate('Country')}}</label>
-                                                <select name="country" id="country"  class="form-select select2 select_picker">
+                                                <select name="country" id="country"  class="form-control form-select select2 select_picker">
                                                     <option value="" disabled selected>{{translate('Select_Country')}}</option>
                                                     @if($country_restrict_status)
                                                         @foreach($delivery_countries as $country)

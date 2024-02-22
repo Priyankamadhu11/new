@@ -51,25 +51,22 @@
         </div>
     @endif -->
     
-     
-
     @php
-        $toys_list = \app\Model\Product::where('category_id',55)->where('status',1)->get();
+        $toys_list = \app\Model\Product::where('sub_category_id',55)->where('status',1)->get();
         $toyname=\app\Model\Category::where('id',55)->first();
     @endphp
 
     @if(count($toys_list)>0)
 
         @if(isset($banners[2]))
-
-        <div class="container">
-            <div class="pb-5 rounded position-relative">
-                    <a href="{{$banners[2]->url}}" target="_blank">
-                        <img src="{{asset('storage/app/public/banner')}}/{{$banners[2]->photo}}" 
-                            alt="" class="rounded dark-support img-fit start-0 top-0 index-n1 flipX-in-rtl h-auto">
-                    </a>
+            <div class="container">
+                <div class="pb-5 rounded position-relative">
+                        <a href="{{$banners[2]->url}}" target="_blank">
+                            <img src="{{asset('storage/app/public/banner')}}/{{$banners[2]->photo}}" 
+                                alt="" class="rounded dark-support img-fit start-0 top-0 index-n1 flipX-in-rtl h-auto">
+                        </a>
+                </div>
             </div>
-        </div>
         @endif
 
     <div class="container">

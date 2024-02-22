@@ -1,5 +1,6 @@
 <section>
 
+
     @php
 
         $section_banners = \app\Model\Banner::where('banner_type', 'Section wise Banner')->get();
@@ -19,6 +20,23 @@
         $subcat_list = \app\Model\Category::where('parent_id', 13)->get();
         $cattname=\app\Model\Category::where('id',13)->first();
     @endphp
+
+    <style>
+
+        #refurbished
+        {
+            background:linear-gradient(-90deg, #090038, #00759f);;
+            color: white;
+            position: absolute;
+            z-index: 99;
+            margin-top: 15px;
+            padding: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            border: 1px dashed yellow;
+        }
+        
+    </style>
 
     <!-- @if(isset($banners[1]))
         <div class="container">
@@ -69,32 +87,42 @@
             </div>
         @endif
 
-    <div class="container">
-        <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
-            <h2>{{$toyname->name}}</h2>
-        </div>
+        <div class="container">
+            <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
+                <h2>{{$toyname->name}}</h2>
+            </div>
 
-            <div class="swiper-container pb-5">
-                    <!-- Swiper -->
-                <div class="position-relative">
-                    <div class="swiper" data-swiper-loop="true" data-swiper-margin="20"
-                             data-swiper-pagination-el="null" data-swiper-navigation-next=".top-stores-nav-next"
-                             data-swiper-navigation-prev=".top-stores-nav-prev"
-                             data-swiper-breakpoints='{"0": {"slidesPerView": "1"}, "768": {"slidesPerView": "2"}, "992": {"slidesPerView": "4"}}'>
-                    <div class="swiper-wrapper">            
-                        @foreach ($toys_list as $key => $toys)
-                            <div class="swiper-slide align-items-start bg-light rounded">
-                                <a href="{{ route('products', ['id' => $toys['id'], 'data_from' => 'category', 'page' => 1]) }}" class="text-center">
-                                    <img src="{{ asset('storage/app/public/category/' . $toys->icon) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit">
-                                    <span class="text-center pt-2">{{ $toys->name }}</span>
-                                </a>
-                            </div>
-                        @endforeach
+                <div class="swiper-container pb-5">
+                        <!-- Swiper -->
+                    <div class="position-relative">
+                        <div class="swiper" data-swiper-loop="true" data-swiper-margin="20"
+                                data-swiper-pagination-el="null" data-swiper-navigation-next=".top-stores-nav-next"
+                                data-swiper-navigation-prev=".top-stores-nav-prev"
+                                data-swiper-breakpoints='{"0": {"slidesPerView": "1"}, "768": {"slidesPerView": "2"}, "992": {"slidesPerView": "4"}}'>
+                        <div class="swiper-wrapper">            
+                            @foreach ($toys_list as $key => $toys)
+                                <div class="swiper-slide align-items-start bg-light rounded">
+                                    @if($toys->used_or_new == 1)
+                                        <div id="refurbished">Refurbished Product</div>
+                                    @endif
+                                    <a href="{{route('product',$toys->slug)}}" class="text-center">
+                                        @php
+                                            $images = json_decode($toys['images']);
+                                            $firstImage = isset($images[0]) ? $images[0] : null;
+                                        @endphp
+                                        <!-- <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit"> -->
+                                        
+                                        <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
+
+                                        <span class="text-center pt-2">{{ $toys->name }}</span>
+                                    </a>
+                                </div>
+                            @endforeach
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
     @endif
 

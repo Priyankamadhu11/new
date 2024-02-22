@@ -88,7 +88,7 @@
         @endif
 
         <div class="container">
-            <div class="d-flex flex-wrap justify-content-between gap-3 mb-4">
+            <div class="d-flex flex-wrap justify-content-between gap-3 mb-2">
                 <h2>{{$toyname->name}}</h2>
             </div>
 
@@ -98,7 +98,7 @@
                         <div class="swiper" data-swiper-loop="true" data-swiper-margin="20"
                                 data-swiper-pagination-el="null" data-swiper-navigation-next=".top-stores-nav-next"
                                 data-swiper-navigation-prev=".top-stores-nav-prev"
-                                data-swiper-breakpoints='{"0": {"slidesPerView": "1"}, "768": {"slidesPerView": "2"}, "992": {"slidesPerView": "4"}}'>
+                                data-swiper-breakpoints='{"0": {"slidesPerView": "1"}, "768": {"slidesPerView": "2"}, "992": {"slidesPerView": "5"}}'>
                         <div class="swiper-wrapper">            
                             @foreach ($toys_list as $key => $toys)
                                 <div class="swiper-slide align-items-start bg-light rounded">
@@ -110,8 +110,7 @@
                                             $images = json_decode($toys['images']);
                                             $firstImage = isset($images[0]) ? $images[0] : null;
                                         @endphp
-                                        <!-- <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded img-fit"> -->
-                                        
+                                      
                                         <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
 
                                         <span class="text-center pt-2">{{ $toys->name }}</span>

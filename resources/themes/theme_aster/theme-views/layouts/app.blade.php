@@ -12,6 +12,8 @@
     gtag('config', 'G-8HCYPFKSCH');
     </script>
 
+    <meta name="google-site-verification" content="7Ul8fqxia19UwRtLmkLDGnB6muI5IxINpOpjQmesRCM" />
+
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
@@ -27,9 +29,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="_token" content="{{csrf_token()}}">
 
+
     <!-- Favicon -->
     <link rel="shortcut icon" href="{{asset('storage/app/public/company')}}/{{$web_config['fav_icon']->value}}"/>
 
+    
 
     <!-- Web Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">

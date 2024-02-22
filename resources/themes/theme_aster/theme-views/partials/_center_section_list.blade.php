@@ -45,7 +45,7 @@
     @endif
 
     @php
-        $jaggery_list = \app\Model\Product::where('category_id',57)->where('status',1)->get();
+        $jaggery_list = \app\Model\Product::where('category_id',57)->where('status',1)->inRandomOrder()->take(4)->get();
         $cat_name=\app\Model\Category::where('id',57)->first();
     @endphp
 

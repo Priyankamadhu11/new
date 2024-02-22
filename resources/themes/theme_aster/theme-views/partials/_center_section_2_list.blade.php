@@ -137,7 +137,7 @@
     @endif
 
     @php
-        $topcat_list = \app\Model\Category::where('parent_id',0)->inRandomOrder()->take(6)->get();
+        $topcat_list = \app\Model\Category::where('parent_id',0)->where('home_status',1)->inRandomOrder()->take(6)->get();
     @endphp
 
     @if(count($topcat_list)>0)

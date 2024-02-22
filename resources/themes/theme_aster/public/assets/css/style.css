@@ -3176,7 +3176,7 @@
         .select-category-button {
             inline-size: 18.1875rem;
         }
-        .search-box.position-relative {
+        /* .search-box.position-relative {
             display: none;
         }
         .nav-wrapper {
@@ -3193,7 +3193,7 @@
         }
         .menu-btn.d-xl-none {
             display: none;
-        }
+        } */
         .rounded-circle.overflow-hidden.border.border-2 {
             width: 100px!important;
             height: 100px!important;

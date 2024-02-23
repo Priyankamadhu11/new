@@ -558,9 +558,10 @@
             </div>
         </section>
     </main>
+    
     <!-- End Main Content -->
 
-    <span id="filter_url" data-url="{{url('/')}}/shopView/{{$shop->id}}"></span>
+    <span id="filter_url" data-url="{{route('shopView',['id' => $shop->id, 'seller' => $shop->name])}}"></span>
     <span id="product_view_style_url" data-url="{{route('product_view_style')}}"></span>
     <span id="shop_follow_url" data-url="{{route('shop_follow')}}"></span>
     <input type="hidden" value="{{$data['data_from']}}" id="data_from">

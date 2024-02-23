@@ -45,10 +45,10 @@
 
                             @if($product->images!=null && json_decode($product->images)>0)
                             <div class="swiper-wrapper">
-                                <p>Image source: {{ asset("storage/app/public/product/$photo") }}</p>
                                 @if(json_decode($product->colors) && $product->color_image)
-                                    @foreach (json_decode($product->color_image) as $key => $photo)
-                                        @if($photo->color != null)
+                                @foreach (json_decode($product->color_image) as $key => $photo)
+                                @if($photo->color != null)
+                                <p>Image source: {{ asset("storage/app/public/product/$photo") }}</p>
                                         <div class="swiper-slide position-relative" id="preview-box-{{ $photo->color }}">
                                                 <div class="easyzoom easyzoom--overlay">
                                                     @if ($product->discount > 0 && $product->discount_type === "percent")

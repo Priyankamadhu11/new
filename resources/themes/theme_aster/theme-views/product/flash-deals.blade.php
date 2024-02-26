@@ -49,7 +49,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <div class="row g-3" id="filtered-products" style="--minWidth:12rem">
+                                <div class="row g-3" id="filtered-products" style="--minWidth:16rem">
                                     <!-- Single Product -->
                                     @foreach($deal->products as $product)
                                     @if(!empty($product->product))

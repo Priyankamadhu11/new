@@ -2,7 +2,7 @@
 
 <div class="product border rounded text-center d-flex flex-column gap-10" onclick="location.href='{{route('product',$product->slug)}}'">
     <!-- Product top -->
-    <div class="product__top" style="--width: 100%; --height: 12.5rem">
+    <div class="product__top" style="--width: 100%; --height: 20rem">
         @if($product->discount > 0)
             <span class="product__discount-badge">-
                 @if ($product->discount_type == 'percent')

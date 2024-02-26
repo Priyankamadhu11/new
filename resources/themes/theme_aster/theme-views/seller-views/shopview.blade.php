@@ -237,7 +237,7 @@
 
         <!-- Featured Products -->
         @if (count($featured_products) > 0)
-        <section class="bg-primary-light">
+        <section style="background:#FFD5C0">
             <div class="container">
                 <div class="">
                     <div class="py-4">

@@ -6913,4 +6913,5 @@
   'Category_name' => 'Category name',
   'COMING SOON!' => 'COMING SOON!',
   'address_updated_successfully!' => 'Address updated successfully!',
+  'Already_have_an_account' => 'Already have an account',
 );

@@ -111,9 +111,9 @@
                                             $firstImage = isset($images[0]) ? $images[0] : null;
                                         @endphp
                                       
-                                        <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
+                                        <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="{{ $toys->name }}" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit pb-2">
 
-                                        <span class="text-center pt-2">{{ $toys->name }}</span>
+                                        <span class="text-center">{{ $toys->name }}</span>
                                     </a>
                                 </div>
                             @endforeach

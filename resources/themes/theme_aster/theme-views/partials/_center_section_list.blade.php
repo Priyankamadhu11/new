@@ -68,9 +68,9 @@
                                 $images = json_decode($image['images']);
                                 $firstImage = isset($images[0]) ? $images[0] : null;
                             @endphp
-                            <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit">
+                            <img src="{{ asset('storage/app/public/product/' . $firstImage) }}" loading="lazy" alt="" onerror="this.src='{{ theme_asset('assets/img/image-place-holder-2_1.png') }}'" class="dark-support rounded w-100 img-fit pb-2">
                         </a>
-                        <span class="text-center pt-2">{{$image->name}}</span>
+                        <span class="text-center pt-4">{{$image->name}}</span>
                     </div>
                 @endforeach
             </div>

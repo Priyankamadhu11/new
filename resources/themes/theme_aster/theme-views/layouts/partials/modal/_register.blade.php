@@ -27,7 +27,7 @@
                 <div class="mb-4">
                     <h2 class="mb-2">{{ translate('sign_up') }}</h2>
                     <p class="text-muted">
-                        {{ translate('login_to_your_account.') }} {{ translate('Don’t_have_account') }}?
+                        {{ translate('login_to_your_account.') }} {{ translate('Already_have_an_account') }}?
                         <span
                             class="text-primary fw-bold"
                             data-bs-toggle="modal"
@@ -43,7 +43,7 @@
                         <div class="row">
                             <div class="col-sm-6">
                                 <div class="form-group mb-4">
-                                    <label for="f_name"> {{ translate('First_Name') }}</label>
+                                    <label for="f_name"> {{ translate('First_Name') }}<span class="text-danger">*</span></label>
                                     <input
                                         type="text"
                                         id="f_name"
@@ -57,7 +57,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-4">
-                                    <label for="l_name">{{ translate('Last_Name') }}</label>
+                                    <label for="l_name">{{ translate('Last_Name') }}<span class="text-danger">*</span></label>
                                     <input
                                         type="text"
                                         id="l_name"
@@ -71,7 +71,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-4">
-                                    <label for="r_email">{{ translate('email') }}</label>
+                                    <label for="r_email">{{ translate('email') }}<span class="text-danger">*</span></label>
                                     <input
                                         type="text"
                                         id="r_email"
@@ -86,7 +86,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group mb-4">
-                                    <label for="phone">{{ translate('phone') }}</label>
+                                    <label for="phone">{{ translate('phone') }}<span class="text-danger">*</span></label>
                                     <input
                                         type="number"
                                         id="phone"
@@ -100,7 +100,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-4">
-                                    <label for="password">{{ translate('password') }}</label>
+                                    <label for="password">{{ translate('password') }}<span class="text-danger">*</span></label>
                                     <div class="input-inner-end-ele">
                                         <input
                                             type="password"
@@ -117,7 +117,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="mb-4">
-                                    <label for="confirm_password">{{ translate('Confirm_Password') }}</label>
+                                    <label for="confirm_password">{{ translate('Confirm_Password') }}<span class="text-danger">*</span></label>
                                     <div class="input-inner-end-ele">
                                         <input
                                             type="password"

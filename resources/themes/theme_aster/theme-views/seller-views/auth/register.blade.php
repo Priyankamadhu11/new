@@ -81,31 +81,31 @@
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="firstName">{{translate('First_Name')}} *</label>
+                                                            <label for="firstName">{{translate('First_Name')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" id="firstName" name="f_name" value="{{old('f_name')}}" placeholder="{{translate('Ex')}} : Jhon" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="lastName">{{translate('Last_Name')}} *</label>
+                                                            <label for="lastName">{{translate('Last_Name')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" id="lastName" name="l_name" value="{{old('l_name')}}" placeholder="{{translate('Ex')}} : Doe" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="email2">{{translate('Email')}} *</label>
+                                                            <label for="email2">{{translate('Email')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="email" id="email2"  name="email" value="{{old('email')}}" placeholder="{{translate('Enter_email')}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="tel">{{translate('Phone')}} *</label>
+                                                            <label for="tel">{{translate('Phone')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="tel" id="tel" name="phone" value="{{old('phone')}}" placeholder="{{translate('Enter_phone_number')}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="password">{{translate('Password')}} *</label>
+                                                            <label for="password">{{translate('Password')}}<span class="text-danger">*</span></label>
                                                             <div class="input-inner-end-ele">
                                                                 <input class="form-control" type="password" id="password"  name="password" value="{{old('password')}}" placeholder="{{translate('Enter_password')}}" required>
                                                                 <i class="bi bi-eye-slash-fill togglePassword"></i>
@@ -114,7 +114,7 @@
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="repeat_password">{{translate('Confirm_Password')}} *</label>
+                                                            <label for="repeat_password">{{translate('Confirm_Password')}}<span class="text-danger">*</span></label>
                                                             <div class="input-inner-end-ele">
                                                                 <input class="form-control" type="password" id="repeat_password" name="repeat_password" placeholder="{{translate('repeat_password')}}" required>
                                                                 <i class="bi bi-eye-slash-fill togglePassword"></i>
@@ -137,7 +137,7 @@
                                                             </div>
 
                                                             <div class="media-body d-flex flex-column gap-1 upload-img-content">
-                                                                <h5 class="text-uppercase mb-1">{{translate('Seller_Image')}}</h5>
+                                                                <h5 class="text-uppercase mb-1">{{translate('Seller_Image')}}<span class="text-danger">*</span></h5>
                                                                 <div class="text-muted">{{translate('Image_Ration')}} 1:1</div>
                                                                 <div class="text-muted">
                                                                     {{translate('NB')}}: {{translate('image_size_must_be_within')}} 2 MB <br>
@@ -155,13 +155,13 @@
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="storeName">{{translate('Store_Name')}} *</label>
+                                                            <label for="storeName">{{translate('Store_Name')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" id="storeName" name="shop_name" placeholder="{{translate('Ex')}}: {{translate('halar')}}" value="{{old('shop_name')}}" required>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="form-group mb-4">
-                                                            <label for="storeAddress">{{translate('Store_Address')}} *</label>
+                                                            <label for="storeAddress">{{translate('Store_Address')}}<span class="text-danger">*</span></label>
                                                             <input class="form-control" type="text" id="storeAddress" name="shop_address" value="{{old('shop_address')}}" placeholder="{{translate('Ex_:_Shop_-12_Road-8') }}" required>
                                                         </div>
                                                     </div>
@@ -182,7 +182,7 @@
                                                             </div>
 
                                                             <div class="text-center">
-                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Banner')}}</h5>
+                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Banner')}}<span class="text-danger">*</span></h5>
                                                                 <div class="text-muted">{{translate('Image_Ratio')}} 3:1</div>
                                                             </div>
                                                         </div>
@@ -205,7 +205,7 @@
                                                             </div>
 
                                                             <div class="text-center">
-                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Secondary_Banner')}}</h5>
+                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Secondary_Banner')}}<span class="text-danger">*</span></h5>
                                                                 <div class="text-muted">{{translate('Image_Ratio')}} 3:1</div>
                                                             </div>
                                                         </div>
@@ -228,7 +228,7 @@
                                                             </div>
 
                                                             <div class="text-center">
-                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Logo')}}</h5>
+                                                                <h5 class="text-uppercase mb-1">{{translate('Store_Logo')}}<span class="text-danger">*</span></h5>
                                                                 <div class="text-muted">{{translate('Image_Ratio')}} 1:1</div>
                                                             </div>
                                                         </div>

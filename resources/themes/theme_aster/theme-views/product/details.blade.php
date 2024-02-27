@@ -53,12 +53,13 @@
             <div class="pl-5">
                 <nav aria-label="breadcrumb ">
                     <ol class="breadcrumb fs-12 mb-0">
-                        <li class="breadcrumb-item"><a href="{{route('home')}}" target="_blank">{{ translate('home') }}</a></li>
+                        <li class="breadcrumb-item active"><a href="{{route('home')}}" style="padding-left:10px;" target="_blank">{{ translate('home') }}</a></li>
                         <li class="breadcrumb-item active" aria-current="page">
 
                             @php
                                 $product_cat = json_decode($product->category_ids);
                                 $category_names = [];
+                                $category_ids = [];
                             @endphp
 
                             @foreach ($product_cat as $cat) 
@@ -66,11 +67,28 @@
                                     $category = \app\Model\Category::where('id', $cat->id)->first();
                                     if ($category) {
                                         $category_names[] = $category->name;
+                                        $category_ids[] = $category->id;
                                     }
                                 @endphp
                             @endforeach
 
-                            {{str_replace(['-', '_', '/'],' ',$product->category->name)}}{{ isset($category_names[0]) ? ' / '.$category_names[0] : ''}}{{ isset($category_names[1]) ? ' / '.$category_names[1] : ''}}{{ isset($category_names[2]) ? ' / '.$category_names[2] : ''}} 
+                           @if(isset($category_names[0]))
+                            <a href="{{route('products',['id'=>$category_ids[0],'data_from'=>'category','page'=>1])}}" target="_blank">   
+                                {{$category_names[0]}}
+                            </a>
+                            @endif
+
+                            @if(isset($category_names[1]))
+                            <a href="{{route('products',['id'=> $category_ids[1],'data_from'=>'latest','page'=>1])}}" target="_blank"> 
+                                {{' / '.$category_names[1]}}
+                            </a>
+                            @endif
+
+                            @if(isset($category_names[2]))
+                            <a href="{{route('products',['id'=> $category_ids[2],'data_from'=>'latest','page'=>1])}}" target="_blank"> 
+                                {{' / '.$category_names[2]}} 
+                            </a>
+                            @endif
 
                         </li>
                     </ol>

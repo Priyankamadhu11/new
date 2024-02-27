@@ -27,9 +27,11 @@
             <form action="{{ route('admin.product.list',['type'=>request('type')])}}"  method="GET">
                 <input type="hidden" value="{{ request('status') }}" name="status">
                 <div class="row gx-2">
+
                     <div class="col-12">
                         <h4 class="mb-3">{{translate('filter_Products')}}</h4>
                     </div>
+
                     @if (request('type') == 'seller')
                         <div class="col-sm-6 col-lg-4 col-xl-3">
                             <div class="form-group">
@@ -45,6 +47,7 @@
                             </div>
                         </div>
                     @endif
+
                     <div class="col-sm-6 col-lg-4 col-xl-3">
                         <div class="form-group">
                             <label class="title-color" for="store">{{translate('brand')}}</label>
@@ -166,6 +169,7 @@
                                 <th>{{translate('SL')}}</th>
                                 <th>{{translate('product Name')}}</th>
                                 <th class="text-right">{{translate('product Type')}}</th>
+                                <th class="text-right">{{translate('Added By')}}</th>
                                 <th class="text-right">{{translate('purchase_price')}}</th>
                                 <th class="text-right">{{translate('selling_price')}}</th>
                                 <th class="text-center">{{translate('show_as_featured')}}</th>
@@ -188,6 +192,17 @@
                                 </td>
                                 <td class="text-right">
                                     {{translate(str_replace('_',' ',$p['product_type']))}}
+                                </td>
+                                <td class="text-right">
+                                        @if($p['added_by'] == 'seller')
+                                            @php
+                                                $seller_name= app\Model\Shop::where('id',$p['user_id'])->first();
+                                            @endphp
+
+                                            {{$seller_name->name}}
+                                        @else
+                                            Admin
+                                        @endif
                                 </td>
                                 <td class="text-right">
                                     {{\App\CPU\BackEndHelper::set_symbol(\App\CPU\BackEndHelper::usd_to_currency($p['purchase_price']))}}

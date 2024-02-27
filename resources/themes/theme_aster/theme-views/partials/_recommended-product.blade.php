@@ -9,7 +9,6 @@
                 <button data-bs-toggle="tab" data-bs-target="#best_selling" role="tab"
                         aria-controls="best_selling">{{ translate('Best_Sellings') }}
                 </button>
-               
                 <button  data-bs-toggle="tab" data-bs-target="#featured_product"
                         role="tab" aria-controls="featured_product">{{ translate('Featured_Products') }}
                 </button>
@@ -19,7 +18,7 @@
         <div class="card mt-3">
             <div class="p-2 p-sm-3">
                 <div class="tab-content" id="nav-tabContent">
-                    <!-- Featured Product -->
+
                     <div class="tab-pane fade" id="featured_product" role="tabpanel" tabindex="0">
                         <div class="d-flex flex-wrap justify-content-end gap-3 mb-3">
                             <a href="{{route('products',['data_from'=>'featured'])}}" class="btn-link">{{ translate('View_All') }}
@@ -27,7 +26,7 @@
                             </a>
                         </div>
                         <div class="auto-col mobile-items-2 gap-2 gap-sm-3 recommended-product-grid" style="--minWidth: 12rem;">
-                            <!-- Single Product -->
+
                             @foreach($featured_products as $product)
                                 @if($product)
                                     @include('theme-views.partials._product-large-card',['product'=>$product])
@@ -36,7 +35,6 @@
                         </div>
                     </div>
 
-                    <!-- Best Selling Product -->
                     <div class="tab-pane fade" id="best_selling" role="tabpanel" tabindex="0">
                         <div class="d-flex flex-wrap justify-content-end gap-3 mb-3">
                             <a href="{{route('products',['data_from'=>'best-selling'])}}" class="btn-link">{{ translate('View_All') }}
@@ -44,7 +42,6 @@
                             </a>
                         </div>
                         <div class="auto-col mobile-items-2 gap-2 gap-sm-3 recommended-product-grid" style="--minWidth: 12rem;">
-                            <!-- Single Product -->
                             @foreach($bestSellProduct as $order)
                                 @if($order->product)
                                     @include('theme-views.partials._product-large-card',['product'=>$order->product])
@@ -53,7 +50,6 @@
                         </div>
                     </div>
 
-                    <!-- Latest Product -->
                     <div class="tab-pane fade show active" id="latest_product" role="tabpanel" tabindex="0">
                         <div class="d-flex flex-wrap justify-content-end gap-3 mb-3">
                             <a href="{{route('products',['data_from'=>'latest'])}}" class="btn-link">{{ translate('View_All') }}
@@ -61,12 +57,13 @@
                             </a>
                         </div>
                         <div class="auto-col mobile-items-2 gap-2 gap-sm-3 recommended-product-grid" style="--minWidth: 12rem;">
-                            <!-- Single Product -->
+
                             @foreach($latest_products as $product)
                                 @if($product)
                                     @include('theme-views.partials._product-large-card',['product'=>$product])
                                 @endif
                             @endforeach
+
                         </div>
                     </div>
                 </div>

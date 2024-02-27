@@ -1,7 +1,5 @@
 @extends('theme-views.layouts.app')
-
 @section('title', translate('Seller_Apply').' | '.$web_config['name']->value.' '.translate('ecommerce'))
-
 @section('content')
 
 <style>
@@ -24,10 +22,10 @@
     }
 </style>
     <!-- Main Content -->
-    <main class="main-content d-flex flex-column gap-3 py-3 mb-sm-5">
+    <main class="main-content d-flex flex-column gap-3 mb-sm-5">
         <div class="container">
             <div class="card">
-                <div class="card-body p-sm-4">
+                <div class="card-body p-0">
                     @php
                         $seller_banners = App\Model\SellerBanner::where('published', 1)->get();
                     @endphp
@@ -274,7 +272,7 @@
                 </div>
                
                 <hr style="border-top:2px solid" class="pb-5">
-                <section>
+                <section class="container">
                     <h2 class="text-center text-danger">Discover the simplicity of selling on Zigamart</h2>
                     <div class="row py-5 align-items-center">
                         <div class="col-md-5">
@@ -335,8 +333,8 @@
                         </div>
                     </div>
                 </section>
-                 <hr style="border-top:2px solid">
-                 <div class="d-flex justify-content-evenly py-3">
+                <hr style="border-top:2px solid">
+                <div class="d-flex justify-content-evenly py-3">
                    <div class="col-sec text-center">
                         <img src="/public/assets/front-end/img/sell-accross-india.png"  alt=""/>
                         <span>Sell around the clock <br> reaching customers in 2500 cities and towns</span>

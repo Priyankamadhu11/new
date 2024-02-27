@@ -132,7 +132,7 @@
                                 <ul class="d-flex flex-column gap-3">
                                     @if($web_config['seller_registration'])
                                         <li>
-                                            <a href="{{route('shop.apply')}}">{{translate('Open_Your_Store')}}</a>
+                                            <a href="{{route('shop.apply')}}">{{translate('Become_a_Seller')}}</a>
                                         </li>
                                     @endif
                                     <li>

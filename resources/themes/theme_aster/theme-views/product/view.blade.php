@@ -38,16 +38,16 @@
                 <div class="card mb-3">
                     <div class="card-body">
                         <div class="row gy-2 align-items-center">
-                            <div class="col-lg-4">
+                            <div class="col-lg-6">
                                 <h3 class="mb-1">{{translate(str_replace(['-', '_', '/'],' ',$data['data_from']))}} {{translate('products')}}</h3>
                                 <nav aria-label="breadcrumb">
                                     <ol class="breadcrumb fs-12 mb-0">
-                                      <li class="breadcrumb-item"><a href="#">{{ translate('home') }}</a></li>
+                                      <li class="breadcrumb-item"><a href="{{route('home')}}" target="_blank">{{ translate('home') }}</a></li>
                                       <li class="breadcrumb-item active" aria-current="page">{{translate(str_replace(['-', '_', '/'],' ',$data['data_from']))}} {{translate('products')}} {{ isset($data['brand_name']) ? ' / '.$data['brand_name'] : ''}} {{ request('name') ? '('.request('name').')' : ''}}</li>
                                     </ol>
                                   </nav>
                             </div>
-                            <div class="col-lg-8">
+                            <div class="col-lg-6">
                                 <div class="d-flex justify-content-lg-end flex-wrap gap-2">
                                     <div class="border rounded custom-ps-3 py-2">
                                         <div class="d-flex gap-2">

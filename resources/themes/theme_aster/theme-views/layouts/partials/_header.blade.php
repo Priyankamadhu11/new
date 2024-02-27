@@ -307,7 +307,7 @@
                                 </ul>
                             </li>
                             <li>
-                                <a href="{{route('home')}}">{{ translate('home') }}</a>
+                                <a href="{{route('home')}}"><i class="bi bi-home"></i></a>
                             </li>
                             @if($web_config['featured_deals']->count()>0 || $web_config['flash_deals'])
                             <li>
@@ -493,7 +493,7 @@
                         </div>
                         <ul class="nav main-menu align-items-center d-none d-xl-flex flex-nowrap text-light">
                             <li class="{{request()->is('/')?'active':''}}">
-                                <a href="{{route('home')}}" class="fw-bold text-light">{{ translate('Home')}}</a>
+                                <a href="{{route('home')}}" class="fw-bold text-light"><i class="bi bi-house fs-5"></i></a>
                             </li>
                             @if($web_config['featured_deals']->count()>0 || $web_config['flash_deals'])
                             <li>

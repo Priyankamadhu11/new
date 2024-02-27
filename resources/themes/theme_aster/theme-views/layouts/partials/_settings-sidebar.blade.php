@@ -1,5 +1,5 @@
 <!-- Settings Sidebar -->
-<div class="settings-sidebar d-none d-xl-flex">
+<!-- <div class="settings-sidebar d-none d-xl-flex">
     <div class="theme-bar">
         <div class="active-theme-wrap">
             <div class="active-theme">
@@ -16,4 +16,4 @@
             <span>{{ translate('dark') }}</span>
         </button>
     </div>
-</div>
+</div> -->

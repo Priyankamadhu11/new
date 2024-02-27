@@ -48,7 +48,39 @@
 @section('content')
     <!-- Main Content -->
     <main class="main-content d-flex flex-column gap-3 pt-3 mb-sm-5">
+
         <div class="container">
+            <div class="pl-5">
+                <nav aria-label="breadcrumb ">
+                    <ol class="breadcrumb fs-12 mb-0">
+                        <li class="breadcrumb-item"><a href="{{route('home')}}" target="_blank">{{ translate('home') }}</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">
+
+                            @php
+                                $product_cat = json_decode($product->category_ids);
+                                $category_names = [];
+                            @endphp
+
+                            @foreach ($product_cat as $cat) 
+                                @php
+                                    $category = \app\Model\Category::where('id', $cat->id)->first();
+                                    if ($category) {
+                                        $category_names[] = $category->name;
+                                    }
+                                @endphp
+                            @endforeach
+
+                            {{str_replace(['-', '_', '/'],' ',$product->category->name)}}{{ isset($category_names[0]) ? ' / '.$category_names[0] : ''}}{{ isset($category_names[1]) ? ' / '.$category_names[1] : ''}}{{ isset($category_names[2]) ? ' / '.$category_names[2] : ''}} 
+
+                        </li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <div class="container">
+
+            
+
             <div class="row gx-3 gy-4">
                 <div class="col-lg-8 col-xl-9">
                     <div class="card mb-3">
@@ -56,9 +88,7 @@
                             <div class="quickview-content">
                                 <div class="row gy-4">
                                     <div class="col-lg-5">
-                                        <!-- Product Details Image Wrap -->
                                         <div class="pd-img-wrap position-relative h-100">
-                                            
                                             @if($product->used_or_new == 1)
                                                 <div id="refurbished">Refurbished Product</div>
                                             @endif
@@ -81,7 +111,6 @@
                                                         <a href="javascript:" title="Share">
                                                             <i class="bi bi-share-fill"></i>
                                                         </a>
-
                                                         <ul>
                                                             <li>
                                                                 <a href="javascript:"
@@ -774,7 +803,7 @@
             <!-- Similar Products From Other Stores -->
             <div class="py-4 mt-3">
                 <div class="d-flex justify-content-between gap-3 mb-4">
-                    <h2>{{translate('similar_Products_From_Other_Stores')}}</h2>
+                    <h2>{{translate('similar_Products')}}</h2>
                     <div class="swiper-nav d-flex gap-2 align-items-center">
                         <div class="swiper-button-prev top-rated-nav-prev position-static rounded-10"></div>
                         <div class="swiper-button-next top-rated-nav-next position-static rounded-10"></div>
@@ -805,6 +834,7 @@
                 </div>
             </div>
         </div>
+
     </main>
 
     <!-- End Main Content -->

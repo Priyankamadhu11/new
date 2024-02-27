@@ -6914,4 +6914,13 @@
   'COMING SOON!' => 'COMING SOON!',
   'address_updated_successfully!' => 'Address updated successfully!',
   'Already_have_an_account' => 'Already have an account',
+  'similar_Products' => 'Similar Products',
+  'womens fashion' => 'Womens fashion',
+  'generic' => 'Generic',
+  'ethnic wears' => 'Ethnic wears',
+  'Women s Fashion' => 'Women s Fashion',
+  12 => '12',
+  'Become_a_seller' => 'Become a seller',
+  'You already subscribed this site!!' => 'You already subscribed this site!!',
+  'Added By' => 'Added By',
 );

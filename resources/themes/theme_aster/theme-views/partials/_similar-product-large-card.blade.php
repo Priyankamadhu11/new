@@ -1,7 +1,7 @@
 @php($overallRating = $product->reviews ? \App\CPU\ProductManager::get_overall_rating($product->reviews) : 0)
-<div class="product border rounded text-center d-flex flex-column gap-10" onclick="location.href='{{route('product',$product->slug)}}'">
+<div class="product border rounded text-center d-flex flex-column gap-10" >
     <!-- Product top -->
-    <div class="product__top" style="--width: 100%; --height: 12.5rem">
+    <div class="product__top" style="--width: 100%; --height: 12.5rem;cursor:pointer;" onclick="location.href='{{route('product',$product->slug)}}'">
         @if($product->discount > 0)
             <span class="product__discount-badge">
                 -@if ($product->discount_type == 'percent')
@@ -77,15 +77,15 @@
             <span>( {{$product->reviews->count()}} )</span>
         </div>
 
-        <div class="text-muted fs-12">
+        <div class="text-muted fs-12" >
             @if($product->added_by=='seller')
-                {{ isset($product->seller->shop->name) ? \Illuminate\Support\Str::limit($product->seller->shop->name, 20) : '' }}
+            <a href="{{ route('shopView', ['id' => $product->seller->id, 'seller' => $product->seller->shop->name]) }}" target="_blank">{{ isset($product->seller->shop->name) ? \Illuminate\Support\Str::limit($product->seller->shop->name, 20) : '' }}</a>
             @elseif($product->added_by=='admin')
                 {{$web_config['name']->value}}
             @endif
         </div>
 
-        <h6 class="product__title text-truncate">
+        <h6 class="product__title text-truncate" onclick="location.href='{{route('product',$product->slug)}}'">
             {{ \Illuminate\Support\Str::limit($product['name'], 25) }}
         </h6>
 

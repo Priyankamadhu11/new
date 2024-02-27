@@ -10,7 +10,6 @@
     </div>
 @endif
 
-
 @if (count($products) > 0)
 <div class="my-4" id="paginator-ajax">
     {!! $products->links() !!}

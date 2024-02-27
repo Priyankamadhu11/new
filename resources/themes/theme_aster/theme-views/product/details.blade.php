@@ -79,13 +79,13 @@
                             @endif
 
                             @if(isset($category_names[1]))
-                            <a href="{{route('products',['id'=> $category_ids[1],'data_from'=>'latest','page'=>1])}}" target="_blank"> 
+                            <a href="{{route('products',['id'=> $category_ids[1],'data_from'=>'category','page'=>1])}}" target="_blank"> 
                                 {{' / '.$category_names[1]}}
                             </a>
                             @endif
 
                             @if(isset($category_names[2]))
-                            <a href="{{route('products',['id'=> $category_ids[2],'data_from'=>'latest','page'=>1])}}" target="_blank"> 
+                            <a href="{{route('products',['id'=> $category_ids[2],'data_from'=>'category','page'=>1])}}" target="_blank"> 
                                 {{' / '.$category_names[2]}} 
                             </a>
                             @endif

@@ -6923,4 +6923,6 @@
   'Become_a_seller' => 'Become a seller',
   'You already subscribed this site!!' => 'You already subscribed this site!!',
   'Added By' => 'Added By',
+  'Open_your_store_and_start_selling.' => 'Open your store and start selling.',
+  'Open your doors and start selling. Establish your own business.' => 'Open your doors and start selling. Establish your own business.',
 );

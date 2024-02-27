@@ -64,7 +64,7 @@
                                                 <div class="my-4 text-center">
                                                     <img width="500" src="/public/assets/front-end/img/ZIGAMART-SELLER-AD.gif" loading="lazy" alt="" class="dark-support">
                                                 </div>
-                                                <p class="text-primary">{{translate('Open_your_and_start_selling.')}} {{translate('Create_your_own_business')}}</p>
+                                                <p class="text-primary">{{translate('Open your doors and start selling. Establish your own business.')}}</p>
                                             </div>
                                         </div>
                                     </div>

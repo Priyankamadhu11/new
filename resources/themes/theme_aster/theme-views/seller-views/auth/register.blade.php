@@ -21,7 +21,7 @@
         margin: 4px auto;
     }
 </style>
-    <!-- Main Content -->
+
     <main class="main-content d-flex flex-column gap-3 mb-sm-5">
         <div class="container">
             <div class="card">
@@ -54,7 +54,7 @@
                
                 <div class="card-body p-sm-4" id="targetSection">
                     <div class="row justify-content-between gy-4">
-                        <div class="col-lg-4">
+                                <div class="col-lg-4">
                                     <div class="bg-light p-3 p-sm-4 rounded h-100">
                                         <div class="d-flex justify-content-center">
                                             <div class="ext-center">

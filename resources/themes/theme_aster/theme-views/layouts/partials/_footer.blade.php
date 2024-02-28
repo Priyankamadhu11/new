@@ -96,6 +96,7 @@
             <div class="row gy-5">
                 <div class="col-lg-4">
                     <div class="widget widget--about text-center text-lg-start absolute-white">
+
                         <p>
                             @php
                                 $address = \App\CPU\Helpers::get_business_settings('shop_address');
@@ -110,6 +111,7 @@
                             
                             {{ $formatted_address }}
                         </p>
+
                         <a href="mailto:{{$web_config['email']->value}}">{{$web_config['email']->value}}</a>
 
                         <!--<div class="d-flex gap-3 justify-content-center justify-content-lg-start flex-wrap mt-4">
@@ -211,11 +213,25 @@
     
     <div class="footer-bottom ocean">
         <div class="container">
-            <div class="text-center copyright-text" style="color:wheat;">
-                {{ $web_config['copyright_text']->value }}
+            <div class="row">
+                <div class="col">
+                    <div class="text-center copyright-text" style="color:wheat;">
+                        {{ $web_config['copyright_text']->value }}
+                    </div>
+                    <div class="wave"></div>
+                    <div class="wave"></div>
+                </div>
+                <div class="col">
+                    <div class="row">
+                        <div>We Using Safe Payment For</div>
+                        <div>                             
+                            <!-- <img src="/public/assets/front-end/img/visa_card.png" alt="" /> -->
+                        </div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </div>
             </div>
-            <div class="wave"></div>
-            <div class="wave"></div>
         </div>
         
     </div>

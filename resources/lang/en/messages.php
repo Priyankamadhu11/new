@@ -6925,4 +6925,5 @@
   'Added By' => 'Added By',
   'Open_your_store_and_start_selling.' => 'Open your store and start selling.',
   'Open your doors and start selling. Establish your own business.' => 'Open your doors and start selling. Establish your own business.',
+  'product_has_been_remove_from_wishlist' => 'Product has been remove from wishlist',
 );

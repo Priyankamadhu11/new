@@ -214,12 +214,12 @@
     <div class="footer-bottom">
         <div class="container">
             <div class="row pb-3 align-items-center">
-                <div class="col-md-6">
+                <div class="col-md-5">
                     <div class="text-center copyright-text" style="color:wheat;">
                         {{ $web_config['copyright_text']->value }}
                     </div>
                 </div>
-                <div class="col-md-6">
+                <div class="col-md-7">
                     <div class="d-flex align-items-center justify-content-evenly">
                         <div class="text-white">We Using Safe Payment For</div>
                         <div>                             

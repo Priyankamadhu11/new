@@ -211,29 +211,36 @@
         </div>
     </div>
     
-    <div class="footer-bottom ocean">
+    <div class="footer-bottom">
         <div class="container">
-            <div class="row">
-                <div class="col">
+            <div class="row pb-3 align-items-center">
+                <div class="col-md-6">
                     <div class="text-center copyright-text" style="color:wheat;">
                         {{ $web_config['copyright_text']->value }}
                     </div>
-                    <div class="wave"></div>
-                    <div class="wave"></div>
                 </div>
-                <div class="col">
-                    <div class="row">
-                        <div>We Using Safe Payment For</div>
+                <div class="col-md-6">
+                    <div class="d-flex align-items-center justify-content-evenly">
+                        <div class="text-white">We Using Safe Payment For</div>
                         <div>                             
-                            <!-- <img src="/public/assets/front-end/img/visa_card.png" alt="" /> -->
+                            <img src="{{asset('/public/assets/front-end/img/visa_card.png')}}" alt="" width="100"/>
                         </div>
-                        <div></div>
-                        <div></div>
+                        <div>
+                            <img src="{{asset('/public/assets/front-end/img/master_card.png')}}" alt="" width="100"/>
+                        </div>
+                        <div>
+                            <img src="{{asset('/public/assets/front-end/img/razorpay_card.png')}}" alt="" width="100"/>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-        
+    </div>
+    <div class="footer-bottom ocean">
+        <div class="container">
+            <div class="wave p-2"></div>
+            <div class="wave p-2"></div>
+        </div>
     </div>
 
 </footer>

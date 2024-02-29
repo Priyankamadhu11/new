@@ -97,6 +97,13 @@
                 <div class="col-lg-4">
                     <div class="widget widget--about text-center text-lg-start absolute-white">
 
+                    <h4 class="widget__title">Why Zigamart?</h4>
+                        <p>
+                            Our platform helps small businesses succeed by making sure the products they
+                            sell are good quality and come straight from the makers.
+                        </p>
+
+                        <h4 class="widget__title">Address</h4>
                         <p>
                             @php
                                 $address = \App\CPU\Helpers::get_business_settings('shop_address');
@@ -108,7 +115,6 @@
                                     $formatted_address = $address;
                                 }
                             @endphp
-                            
                             {{ $formatted_address }}
                         </p>
 

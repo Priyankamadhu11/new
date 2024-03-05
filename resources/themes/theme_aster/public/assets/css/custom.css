@@ -491,7 +491,7 @@
     box-shadow: 0 0 10px #888;
 }
 
-.easyzoom-flyout {
+/* .easyzoom-flyout {
     position: absolute;
     z-index: 1000;
     overflow: hidden;
@@ -515,7 +515,33 @@
     min-width: 120% !important;
     min-inline-size: 120% !important;
 
+} */
+.easyzoom-flyout {
+    position: absolute;
+    z-index: 1000;
+    overflow: hidden;
+    background: #fff;
+    top: 0;
+    left: 100%; 
 }
+.easyzoom--overlay .easyzoom-flyout {
+    top: 0;
+    left: 75%;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.easyzoom--overlay .easyzoom-flyout img {
+    width: unset !important;
+    max-width: unset !important;
+    inline-size: unset !important;
+    max-inline-size: unset !important;
+    max-block-size: unset !important;
+    block-size: unset !important;
+    min-width: 120% !important;
+    min-inline-size: 120% !important;
+}
+
 
 .newsletter-form {
     width: 100%;
